@@ -1,0 +1,43 @@
+ 2021-12-14 13:39:59.966 +05:30 [INF] Starting web host
+ 2021-12-14 13:40:02.542 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+ 2021-12-14 13:40:02.545 +05:30 [INF] Hosting environment: Development
+ 2021-12-14 13:40:02.546 +05:30 [INF] Content root path: C:\Users\Administrator\source\repos\HotelListing\HotelListing
+ 2021-12-14 13:40:02.653 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/swagger/index.html - -
+ 2021-12-14 13:40:03.173 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/swagger/index.html - - - 200 - text/html;charset=utf-8 511.5424ms
+ 2021-12-14 13:40:03.396 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/_framework/aspnetcore-browser-refresh.js - -
+ 2021-12-14 13:40:03.440 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/_framework/aspnetcore-browser-refresh.js - - - 200 3087 application/javascript;+charset=utf-8 43.2757ms
+ 2021-12-14 13:40:04.131 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/swagger/v1/swagger.json - -
+ 2021-12-14 13:40:04.520 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 388.2930ms
+ 2021-12-14 13:40:26.837 +05:30 [INF] Starting web host
+ 2021-12-14 13:40:27.266 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+ 2021-12-14 13:40:27.268 +05:30 [INF] Hosting environment: Development
+ 2021-12-14 13:40:27.270 +05:30 [INF] Content root path: C:\Users\Administrator\source\repos\HotelListing\HotelListing
+ 2021-12-14 13:40:27.286 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/swagger/index.html - -
+ 2021-12-14 13:40:27.402 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/swagger/index.html - - - 200 - text/html;charset=utf-8 118.6320ms
+ 2021-12-14 13:40:27.623 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/_framework/aspnetcore-browser-refresh.js - -
+ 2021-12-14 13:40:27.626 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/_framework/aspnetcore-browser-refresh.js - - - 200 3087 application/javascript;+charset=utf-8 3.0426ms
+ 2021-12-14 13:40:28.181 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/swagger/v1/swagger.json - -
+ 2021-12-14 13:40:28.240 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/swagger/favicon-32x32.png - -
+ 2021-12-14 13:40:28.292 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 110.4825ms
+ 2021-12-14 13:40:28.324 +05:30 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+ 2021-12-14 13:40:28.325 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/swagger/favicon-32x32.png - - - 200 628 image/png 84.2589ms
+ 2021-12-14 13:42:04.897 +05:30 [INF] Starting web host
+ 2021-12-14 13:42:05.281 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+ 2021-12-14 13:42:05.284 +05:30 [INF] Hosting environment: Development
+ 2021-12-14 13:42:05.286 +05:30 [INF] Content root path: C:\Users\Administrator\source\repos\HotelListing\HotelListing
+ 2021-12-14 13:42:05.304 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/swagger/index.html - -
+ 2021-12-14 13:42:05.485 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/swagger/index.html - - - 200 - text/html;charset=utf-8 183.3096ms
+ 2021-12-14 13:42:05.723 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/_framework/aspnetcore-browser-refresh.js - -
+ 2021-12-14 13:42:05.727 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/_framework/aspnetcore-browser-refresh.js - - - 200 3087 application/javascript;+charset=utf-8 2.8911ms
+ 2021-12-14 13:42:06.802 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/swagger/v1/swagger.json - -
+ 2021-12-14 13:42:06.885 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 82.7389ms
+ 2021-12-14 13:43:09.075 +05:30 [INF] Starting web host
+ 2021-12-14 13:43:09.515 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+ 2021-12-14 13:43:09.519 +05:30 [INF] Hosting environment: Development
+ 2021-12-14 13:43:09.521 +05:30 [INF] Content root path: C:\Users\Administrator\source\repos\HotelListing\HotelListing
+ 2021-12-14 13:43:09.543 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/swagger/index.html - -
+ 2021-12-14 13:43:09.696 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/swagger/index.html - - - 200 - text/html;charset=utf-8 155.7801ms
+ 2021-12-14 13:43:09.969 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/_framework/aspnetcore-browser-refresh.js - -
+ 2021-12-14 13:43:09.976 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/_framework/aspnetcore-browser-refresh.js - - - 200 3087 application/javascript;+charset=utf-8 5.2455ms
+ 2021-12-14 13:43:10.777 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/swagger/v1/swagger.json - -
+ 2021-12-14 13:43:10.861 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 84.3075ms

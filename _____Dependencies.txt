@@ -1,0 +1,3 @@
+Serilog
+EntityFrameworkCore: EFCore, EFCORE.Sl, EFCORE.Tools(running command) 
+For MSSQL - Add SQLEXpress after the servername eg: DESKTOP-95PKL8P\SQLEXPRESS 
