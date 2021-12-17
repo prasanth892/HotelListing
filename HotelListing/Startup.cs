@@ -1,5 +1,6 @@
 using HotelListing.Configurations;
 using HotelListing.Data;
+using HotelListing.Data.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -32,7 +33,7 @@ namespace HotelListing
             services.AddDbContext<DataContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("sqlConnection")));
 
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson(op => op.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
             // Cors has been added for Allow  any origin
             services.AddCors(c => { 
@@ -43,6 +44,8 @@ namespace HotelListing
             });
 
             services.AddAutoMapper(typeof(AutoMapperInitializer));
+
+            services.AddTransient<IUnitofWork, UnitofWork>();
 
             services.AddSwaggerGen(c =>
             {

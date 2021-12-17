@@ -14,7 +14,7 @@ namespace HotelListing.Models
         [Required]
         [StringLength(maximumLength: 2, ErrorMessage = "Short Country name is too long")]
         public string ShortName { get; set; }
-        public string tset { get; set; }
+        
     }
 
     // It should go for separate file but I put here because this is the small application

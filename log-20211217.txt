@@ -1,0 +1,1377 @@
+ 2021-12-17 15:43:18.444 +05:30 [INF] Starting web host
+ 2021-12-17 15:43:26.797 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+ 2021-12-17 15:43:26.800 +05:30 [INF] Hosting environment: Development
+ 2021-12-17 15:43:26.802 +05:30 [INF] Content root path: C:\Users\Administrator\source\repos\HotelListing\HotelListing
+ 2021-12-17 15:43:27.152 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/swagger/index.html - -
+ 2021-12-17 15:43:27.691 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/swagger/index.html - - - 200 - text/html;charset=utf-8 505.1624ms
+ 2021-12-17 15:43:29.518 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/swagger/v1/swagger.json - -
+ 2021-12-17 15:43:29.904 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 385.9110ms
+ 2021-12-17 15:46:02.987 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/api/Country/2 - -
+ 2021-12-17 15:46:03.166 +05:30 [INF] Executing endpoint 'HotelListing.Controllers.CountryController.GetCountry (HotelListing)'
+ 2021-12-17 15:46:03.351 +05:30 [INF] Route matched with {action = "GetCountry", controller = "Country"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCountry(Int32) on controller HotelListing.Controllers.CountryController (HotelListing).
+ 2021-12-17 15:46:05.951 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+ 2021-12-17 15:46:14.217 +05:30 [INF] Executed DbCommand (830ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Name], [t].[ShortName], [h].[Id], [h].[Address], [h].[CountryId], [h].[Name], [h].[Rating]
+FROM (
+    SELECT TOP(1) [c].[Id], [c].[Name], [c].[ShortName]
+    FROM [Countries] AS [c]
+    WHERE [c].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Hotels] AS [h] ON [t].[Id] = [h].[CountryId]
+ORDER BY [t].[Id], [h].[Id]
+ 2021-12-17 15:46:17.496 +05:30 [ERR] Something went wrong in the GetCountries AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+Object -> IList`1
+System.Object -> System.Collections.Generic.IList`1[[HotelListing.Models.CountryDto, HotelListing, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+   at lambda_method45(Closure , Object , IList`1 , ResolutionContext )
+   at HotelListing.Controllers.CountryController.GetCountry(Int32 id) in C:\Users\Administrator\source\repos\HotelListing\HotelListing\Controllers\CountryController.cs:line 55
+ 2021-12-17 15:46:17.511 +05:30 [INF] Executing ObjectResult, writing value of type 'System.String'.
+ 2021-12-17 15:46:17.521 +05:30 [INF] Executed action HotelListing.Controllers.CountryController.GetCountry (HotelListing) in 14164.0197ms
+ 2021-12-17 15:46:17.522 +05:30 [INF] Executed endpoint 'HotelListing.Controllers.CountryController.GetCountry (HotelListing)'
+ 2021-12-17 15:46:17.662 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/api/Country/2 - - - 500 - text/plain;+charset=utf-8 14675.3734ms
+ 2021-12-17 15:46:25.699 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/api/Country/2 - -
+ 2021-12-17 15:46:25.706 +05:30 [INF] Executing endpoint 'HotelListing.Controllers.CountryController.GetCountry (HotelListing)'
+ 2021-12-17 15:46:25.707 +05:30 [INF] Route matched with {action = "GetCountry", controller = "Country"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCountry(Int32) on controller HotelListing.Controllers.CountryController (HotelListing).
+ 2021-12-17 15:46:25.785 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+ 2021-12-17 15:46:25.840 +05:30 [INF] Executed DbCommand (40ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Name], [t].[ShortName], [h].[Id], [h].[Address], [h].[CountryId], [h].[Name], [h].[Rating]
+FROM (
+    SELECT TOP(1) [c].[Id], [c].[Name], [c].[ShortName]
+    FROM [Countries] AS [c]
+    WHERE [c].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Hotels] AS [h] ON [t].[Id] = [h].[CountryId]
+ORDER BY [t].[Id], [h].[Id]
+ 2021-12-17 15:46:25.910 +05:30 [ERR] Something went wrong in the GetCountries AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+Object -> IList`1
+System.Object -> System.Collections.Generic.IList`1[[HotelListing.Models.CountryDto, HotelListing, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+   at lambda_method45(Closure , Object , IList`1 , ResolutionContext )
+   at HotelListing.Controllers.CountryController.GetCountry(Int32 id) in C:\Users\Administrator\source\repos\HotelListing\HotelListing\Controllers\CountryController.cs:line 55
+ 2021-12-17 15:46:25.911 +05:30 [INF] Executing ObjectResult, writing value of type 'System.String'.
+ 2021-12-17 15:46:25.912 +05:30 [INF] Executed action HotelListing.Controllers.CountryController.GetCountry (HotelListing) in 204.4756ms
+ 2021-12-17 15:46:25.912 +05:30 [INF] Executed endpoint 'HotelListing.Controllers.CountryController.GetCountry (HotelListing)'
+ 2021-12-17 15:46:25.912 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/api/Country/2 - - - 500 - text/plain;+charset=utf-8 213.6193ms
+ 2021-12-17 15:46:25.919 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/api/Country/2 - -
+ 2021-12-17 15:46:25.921 +05:30 [INF] Executing endpoint 'HotelListing.Controllers.CountryController.GetCountry (HotelListing)'
+ 2021-12-17 15:46:25.921 +05:30 [INF] Route matched with {action = "GetCountry", controller = "Country"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCountry(Int32) on controller HotelListing.Controllers.CountryController (HotelListing).
+ 2021-12-17 15:46:25.943 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+ 2021-12-17 15:46:25.950 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Name], [t].[ShortName], [h].[Id], [h].[Address], [h].[CountryId], [h].[Name], [h].[Rating]
+FROM (
+    SELECT TOP(1) [c].[Id], [c].[Name], [c].[ShortName]
+    FROM [Countries] AS [c]
+    WHERE [c].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Hotels] AS [h] ON [t].[Id] = [h].[CountryId]
+ORDER BY [t].[Id], [h].[Id]
+ 2021-12-17 15:46:26.056 +05:30 [ERR] Something went wrong in the GetCountries AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+Object -> IList`1
+System.Object -> System.Collections.Generic.IList`1[[HotelListing.Models.CountryDto, HotelListing, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+   at lambda_method45(Closure , Object , IList`1 , ResolutionContext )
+   at HotelListing.Controllers.CountryController.GetCountry(Int32 id) in C:\Users\Administrator\source\repos\HotelListing\HotelListing\Controllers\CountryController.cs:line 55
+ 2021-12-17 15:46:26.057 +05:30 [INF] Executing ObjectResult, writing value of type 'System.String'.
+ 2021-12-17 15:46:26.062 +05:30 [INF] Executed action HotelListing.Controllers.CountryController.GetCountry (HotelListing) in 140.102ms
+ 2021-12-17 15:46:26.062 +05:30 [INF] Executed endpoint 'HotelListing.Controllers.CountryController.GetCountry (HotelListing)'
+ 2021-12-17 15:46:26.064 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/api/Country/2 - - - 500 - text/plain;+charset=utf-8 144.8149ms
+ 2021-12-17 15:46:31.058 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/api/Country/2 - -
+ 2021-12-17 15:46:31.058 +05:30 [INF] Executing endpoint 'HotelListing.Controllers.CountryController.GetCountry (HotelListing)'
+ 2021-12-17 15:46:31.058 +05:30 [INF] Route matched with {action = "GetCountry", controller = "Country"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCountry(Int32) on controller HotelListing.Controllers.CountryController (HotelListing).
+ 2021-12-17 15:46:31.061 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+ 2021-12-17 15:46:31.066 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Name], [t].[ShortName], [h].[Id], [h].[Address], [h].[CountryId], [h].[Name], [h].[Rating]
+FROM (
+    SELECT TOP(1) [c].[Id], [c].[Name], [c].[ShortName]
+    FROM [Countries] AS [c]
+    WHERE [c].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Hotels] AS [h] ON [t].[Id] = [h].[CountryId]
+ORDER BY [t].[Id], [h].[Id]
+ 2021-12-17 15:46:31.129 +05:30 [ERR] Something went wrong in the GetCountries AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+Object -> IList`1
+System.Object -> System.Collections.Generic.IList`1[[HotelListing.Models.CountryDto, HotelListing, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+   at lambda_method45(Closure , Object , IList`1 , ResolutionContext )
+   at HotelListing.Controllers.CountryController.GetCountry(Int32 id) in C:\Users\Administrator\source\repos\HotelListing\HotelListing\Controllers\CountryController.cs:line 55
+ 2021-12-17 15:46:31.129 +05:30 [INF] Executing ObjectResult, writing value of type 'System.String'.
+ 2021-12-17 15:46:31.129 +05:30 [INF] Executed action HotelListing.Controllers.CountryController.GetCountry (HotelListing) in 71.1109ms
+ 2021-12-17 15:46:31.129 +05:30 [INF] Executed endpoint 'HotelListing.Controllers.CountryController.GetCountry (HotelListing)'
+ 2021-12-17 15:46:31.130 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/api/Country/2 - - - 500 - text/plain;+charset=utf-8 72.1650ms
+ 2021-12-17 15:49:06.772 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:44300/api/country - -
+ 2021-12-17 15:49:06.772 +05:30 [INF] Executing endpoint 'HotelListing.Controllers.CountryController.GetCountries (HotelListing)'
+ 2021-12-17 15:49:06.779 +05:30 [INF] Route matched with {action = "GetCountries", controller = "Country"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCountries() on controller HotelListing.Controllers.CountryController (HotelListing).
+ 2021-12-17 15:49:06.784 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+ 2021-12-17 15:49:06.914 +05:30 [INF] Executed DbCommand (76ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Name], [c].[ShortName]
+FROM [Countries] AS [c]
+ 2021-12-17 15:49:06.995 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[HotelListing.Models.CountryDto, HotelListing, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+ 2021-12-17 15:49:07.851 +05:30 [INF] Executed action HotelListing.Controllers.CountryController.GetCountries (HotelListing) in 1072.4567ms
+ 2021-12-17 15:49:07.851 +05:30 [INF] Executed endpoint 'HotelListing.Controllers.CountryController.GetCountries (HotelListing)'
+ 2021-12-17 15:49:07.852 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:44300/api/country - - - 200 172 application/json;+charset=utf-8 1080.4924ms
+ 2021-12-17 15:49:14.587 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:44300/api/country/1 - -
+ 2021-12-17 15:49:14.588 +05:30 [INF] Executing endpoint 'HotelListing.Controllers.CountryController.GetCountry (HotelListing)'
+ 2021-12-17 15:49:14.588 +05:30 [INF] Route matched with {action = "GetCountry", controller = "Country"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCountry(Int32) on controller HotelListing.Controllers.CountryController (HotelListing).
+ 2021-12-17 15:49:14.590 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+ 2021-12-17 15:49:14.595 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Name], [t].[ShortName], [h].[Id], [h].[Address], [h].[CountryId], [h].[Name], [h].[Rating]
+FROM (
+    SELECT TOP(1) [c].[Id], [c].[Name], [c].[ShortName]
+    FROM [Countries] AS [c]
+    WHERE [c].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Hotels] AS [h] ON [t].[Id] = [h].[CountryId]
+ORDER BY [t].[Id], [h].[Id]
+ 2021-12-17 15:49:14.721 +05:30 [ERR] Something went wrong in the GetCountries AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+Object -> IList`1
+System.Object -> System.Collections.Generic.IList`1[[HotelListing.Models.CountryDto, HotelListing, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+   at lambda_method45(Closure , Object , IList`1 , ResolutionContext )
+   at HotelListing.Controllers.CountryController.GetCountry(Int32 id) in C:\Users\Administrator\source\repos\HotelListing\HotelListing\Controllers\CountryController.cs:line 55
+ 2021-12-17 15:49:14.722 +05:30 [INF] Executing ObjectResult, writing value of type 'System.String'.
+ 2021-12-17 15:49:14.723 +05:30 [INF] Executed action HotelListing.Controllers.CountryController.GetCountry (HotelListing) in 134.4759ms
+ 2021-12-17 15:49:14.723 +05:30 [INF] Executed endpoint 'HotelListing.Controllers.CountryController.GetCountry (HotelListing)'
+ 2021-12-17 15:49:14.723 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:44300/api/country/1 - - - 500 - text/plain;+charset=utf-8 136.2703ms
+ 2021-12-17 15:50:08.688 +05:30 [INF] Starting web host
+ 2021-12-17 15:50:11.644 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+ 2021-12-17 15:50:11.649 +05:30 [INF] Hosting environment: Development
+ 2021-12-17 15:50:11.651 +05:30 [INF] Content root path: C:\Users\Administrator\source\repos\HotelListing\HotelListing
+ 2021-12-17 15:50:11.706 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/swagger/index.html - -
+ 2021-12-17 15:50:12.100 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/swagger/index.html - - - 200 - text/html;charset=utf-8 400.8293ms
+ 2021-12-17 15:50:14.471 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/swagger/v1/swagger.json - -
+ 2021-12-17 15:50:14.953 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 481.2454ms
+ 2021-12-17 15:50:25.902 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/api/Country/1 - -
+ 2021-12-17 15:50:26.000 +05:30 [INF] Executing endpoint 'HotelListing.Controllers.CountryController.GetCountry (HotelListing)'
+ 2021-12-17 15:50:26.111 +05:30 [INF] Route matched with {action = "GetCountry", controller = "Country"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCountry(Int32) on controller HotelListing.Controllers.CountryController (HotelListing).
+ 2021-12-17 15:50:29.286 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+ 2021-12-17 15:50:36.958 +05:30 [INF] Executed DbCommand (229ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Name], [t].[ShortName], [h].[Id], [h].[Address], [h].[CountryId], [h].[Name], [h].[Rating]
+FROM (
+    SELECT TOP(1) [c].[Id], [c].[Name], [c].[ShortName]
+    FROM [Countries] AS [c]
+    WHERE [c].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Hotels] AS [h] ON [t].[Id] = [h].[CountryId]
+ORDER BY [t].[Id], [h].[Id]
+ 2021-12-17 15:50:38.727 +05:30 [ERR] Something went wrong in the GetCountries AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+Object -> IList`1
+System.Object -> System.Collections.Generic.IList`1[[HotelListing.Models.CountryDto, HotelListing, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+   at lambda_method45(Closure , Object , IList`1 , ResolutionContext )
+   at HotelListing.Controllers.CountryController.GetCountry(Int32 id) in C:\Users\Administrator\source\repos\HotelListing\HotelListing\Controllers\CountryController.cs:line 55
+ 2021-12-17 15:50:38.760 +05:30 [INF] Executing ObjectResult, writing value of type 'System.String'.
+ 2021-12-17 15:50:38.838 +05:30 [INF] Executed action HotelListing.Controllers.CountryController.GetCountry (HotelListing) in 12693.6729ms
+ 2021-12-17 15:50:38.840 +05:30 [INF] Executed endpoint 'HotelListing.Controllers.CountryController.GetCountry (HotelListing)'
+ 2021-12-17 15:50:38.853 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/api/Country/1 - - - 500 - text/plain;+charset=utf-8 12952.7573ms
+ 2021-12-17 15:50:57.426 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:44300/api/country/1 - -
+ 2021-12-17 15:50:57.435 +05:30 [INF] Executing endpoint 'HotelListing.Controllers.CountryController.GetCountry (HotelListing)'
+ 2021-12-17 15:50:57.436 +05:30 [INF] Route matched with {action = "GetCountry", controller = "Country"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCountry(Int32) on controller HotelListing.Controllers.CountryController (HotelListing).
+ 2021-12-17 15:50:57.532 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+ 2021-12-17 15:50:57.585 +05:30 [INF] Executed DbCommand (43ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Name], [t].[ShortName], [h].[Id], [h].[Address], [h].[CountryId], [h].[Name], [h].[Rating]
+FROM (
+    SELECT TOP(1) [c].[Id], [c].[Name], [c].[ShortName]
+    FROM [Countries] AS [c]
+    WHERE [c].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Hotels] AS [h] ON [t].[Id] = [h].[CountryId]
+ORDER BY [t].[Id], [h].[Id]
+ 2021-12-17 15:50:57.854 +05:30 [ERR] Something went wrong in the GetCountries AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+Object -> IList`1
+System.Object -> System.Collections.Generic.IList`1[[HotelListing.Models.CountryDto, HotelListing, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+   at lambda_method45(Closure , Object , IList`1 , ResolutionContext )
+   at HotelListing.Controllers.CountryController.GetCountry(Int32 id) in C:\Users\Administrator\source\repos\HotelListing\HotelListing\Controllers\CountryController.cs:line 55
+ 2021-12-17 15:50:57.855 +05:30 [INF] Executing ObjectResult, writing value of type 'System.String'.
+ 2021-12-17 15:50:57.858 +05:30 [INF] Executed action HotelListing.Controllers.CountryController.GetCountry (HotelListing) in 421.0421ms
+ 2021-12-17 15:50:57.858 +05:30 [INF] Executed endpoint 'HotelListing.Controllers.CountryController.GetCountry (HotelListing)'
+ 2021-12-17 15:50:57.859 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:44300/api/country/1 - - - 500 - text/plain;+charset=utf-8 432.3101ms
+ 2021-12-17 15:52:02.935 +05:30 [INF] Starting web host
+ 2021-12-17 15:52:05.767 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+ 2021-12-17 15:52:05.771 +05:30 [INF] Hosting environment: Development
+ 2021-12-17 15:52:05.773 +05:30 [INF] Content root path: C:\Users\Administrator\source\repos\HotelListing\HotelListing
+ 2021-12-17 15:52:05.855 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/swagger/index.html - -
+ 2021-12-17 15:52:06.096 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/swagger/index.html - - - 200 - text/html;charset=utf-8 248.8976ms
+ 2021-12-17 15:52:08.294 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/swagger/v1/swagger.json - -
+ 2021-12-17 15:52:08.516 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 224.7266ms
+ 2021-12-17 15:52:15.512 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:44300/api/country/1 - -
+ 2021-12-17 15:52:15.579 +05:30 [INF] Executing endpoint 'HotelListing.Controllers.CountryController.GetCountry (HotelListing)'
+ 2021-12-17 15:52:15.883 +05:30 [INF] Route matched with {action = "GetCountry", controller = "Country"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCountry(Int32) on controller HotelListing.Controllers.CountryController (HotelListing).
+ 2021-12-17 15:52:48.339 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+ 2021-12-17 15:52:50.951 +05:30 [INF] Executed DbCommand (93ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Name], [t].[ShortName], [h].[Id], [h].[Address], [h].[CountryId], [h].[Name], [h].[Rating]
+FROM (
+    SELECT TOP(1) [c].[Id], [c].[Name], [c].[ShortName]
+    FROM [Countries] AS [c]
+    WHERE [c].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Hotels] AS [h] ON [t].[Id] = [h].[CountryId]
+ORDER BY [t].[Id], [h].[Id]
+ 2021-12-17 15:55:05.889 +05:30 [INF] Starting web host
+ 2021-12-17 15:55:14.489 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+ 2021-12-17 15:55:14.495 +05:30 [INF] Hosting environment: Development
+ 2021-12-17 15:55:14.498 +05:30 [INF] Content root path: C:\Users\Administrator\source\repos\HotelListing\HotelListing
+ 2021-12-17 15:55:14.534 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:44300/api/country/1 - -
+ 2021-12-17 15:55:14.534 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/swagger/index.html - -
+ 2021-12-17 15:55:14.671 +05:30 [INF] Executing endpoint 'HotelListing.Controllers.CountryController.GetCountry (HotelListing)'
+ 2021-12-17 15:55:14.766 +05:30 [INF] Route matched with {action = "GetCountry", controller = "Country"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCountry(Int32) on controller HotelListing.Controllers.CountryController (HotelListing).
+ 2021-12-17 15:55:15.488 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/swagger/index.html - - - 200 - text/html;charset=utf-8 849.4940ms
+ 2021-12-17 15:55:22.426 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/swagger/v1/swagger.json - -
+ 2021-12-17 15:55:22.616 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 190.6576ms
+ 2021-12-17 15:55:24.002 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+ 2021-12-17 15:55:39.224 +05:30 [INF] Executed DbCommand (172ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Name], [t].[ShortName], [h].[Id], [h].[Address], [h].[CountryId], [h].[Name], [h].[Rating]
+FROM (
+    SELECT TOP(1) [c].[Id], [c].[Name], [c].[ShortName]
+    FROM [Countries] AS [c]
+    WHERE [c].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Hotels] AS [h] ON [t].[Id] = [h].[CountryId]
+ORDER BY [t].[Id], [h].[Id]
+ 2021-12-17 15:55:53.873 +05:30 [INF] Executing OkObjectResult, writing value of type 'HotelListing.Models.CountryDto'.
+ 2021-12-17 15:55:54.397 +05:30 [INF] Executed action HotelListing.Controllers.CountryController.GetCountry (HotelListing) in 39607.0135ms
+ 2021-12-17 15:55:54.403 +05:30 [INF] Executed endpoint 'HotelListing.Controllers.CountryController.GetCountry (HotelListing)'
+ 2021-12-17 15:55:54.598 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:44300/api/country/1 - - - 200 109 application/json;+charset=utf-8 40073.5073ms
+ 2021-12-17 15:57:11.063 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:44300/api/country/1 - -
+ 2021-12-17 15:57:11.078 +05:30 [INF] Executing endpoint 'HotelListing.Controllers.CountryController.GetCountry (HotelListing)'
+ 2021-12-17 15:57:11.078 +05:30 [INF] Route matched with {action = "GetCountry", controller = "Country"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCountry(Int32) on controller HotelListing.Controllers.CountryController (HotelListing).
+ 2021-12-17 15:57:11.128 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+ 2021-12-17 15:57:11.144 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Name], [t].[ShortName], [h].[Id], [h].[Address], [h].[CountryId], [h].[Name], [h].[Rating]
+FROM (
+    SELECT TOP(1) [c].[Id], [c].[Name], [c].[ShortName]
+    FROM [Countries] AS [c]
+    WHERE [c].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Hotels] AS [h] ON [t].[Id] = [h].[CountryId]
+ORDER BY [t].[Id], [h].[Id]
+ 2021-12-17 15:57:11.146 +05:30 [INF] Executing OkObjectResult, writing value of type 'HotelListing.Models.CountryDto'.
+ 2021-12-17 15:57:11.147 +05:30 [INF] Executed action HotelListing.Controllers.CountryController.GetCountry (HotelListing) in 68.4763ms
+ 2021-12-17 15:57:11.147 +05:30 [INF] Executed endpoint 'HotelListing.Controllers.CountryController.GetCountry (HotelListing)'
+ 2021-12-17 15:57:11.148 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:44300/api/country/1 - - - 200 109 application/json;+charset=utf-8 84.9219ms
+ 2021-12-17 15:57:13.043 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:44300/api/country/1 - -
+ 2021-12-17 15:57:13.046 +05:30 [INF] Executing endpoint 'HotelListing.Controllers.CountryController.GetCountry (HotelListing)'
+ 2021-12-17 15:57:13.046 +05:30 [INF] Route matched with {action = "GetCountry", controller = "Country"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCountry(Int32) on controller HotelListing.Controllers.CountryController (HotelListing).
+ 2021-12-17 15:57:13.066 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+ 2021-12-17 15:57:13.077 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Name], [t].[ShortName], [h].[Id], [h].[Address], [h].[CountryId], [h].[Name], [h].[Rating]
+FROM (
+    SELECT TOP(1) [c].[Id], [c].[Name], [c].[ShortName]
+    FROM [Countries] AS [c]
+    WHERE [c].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Hotels] AS [h] ON [t].[Id] = [h].[CountryId]
+ORDER BY [t].[Id], [h].[Id]
+ 2021-12-17 15:57:13.078 +05:30 [INF] Executing OkObjectResult, writing value of type 'HotelListing.Models.CountryDto'.
+ 2021-12-17 15:57:13.079 +05:30 [INF] Executed action HotelListing.Controllers.CountryController.GetCountry (HotelListing) in 32.7742ms
+ 2021-12-17 15:57:13.079 +05:30 [INF] Executed endpoint 'HotelListing.Controllers.CountryController.GetCountry (HotelListing)'
+ 2021-12-17 15:57:13.080 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:44300/api/country/1 - - - 200 109 application/json;+charset=utf-8 37.4799ms
+ 2021-12-17 15:58:09.008 +05:30 [INF] Starting web host
+ 2021-12-17 15:58:16.039 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+ 2021-12-17 15:58:16.052 +05:30 [INF] Hosting environment: Development
+ 2021-12-17 15:58:16.054 +05:30 [INF] Content root path: C:\Users\Administrator\source\repos\HotelListing\HotelListing
+ 2021-12-17 15:58:16.086 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/swagger/index.html - -
+ 2021-12-17 15:58:16.417 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/swagger/index.html - - - 200 - text/html;charset=utf-8 337.2795ms
+ 2021-12-17 15:58:18.517 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/swagger/v1/swagger.json - -
+ 2021-12-17 15:58:18.858 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 341.6785ms
+ 2021-12-17 15:58:21.983 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:44300/api/country/1 - -
+ 2021-12-17 15:58:22.054 +05:30 [INF] Executing endpoint 'HotelListing.Controllers.CountryController.GetCountry (HotelListing)'
+ 2021-12-17 15:58:22.112 +05:30 [INF] Route matched with {action = "GetCountry", controller = "Country"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCountry(Int32) on controller HotelListing.Controllers.CountryController (HotelListing).
+ 2021-12-17 15:58:24.716 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+ 2021-12-17 15:58:27.839 +05:30 [INF] Executed DbCommand (111ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Name], [t].[ShortName], [h].[Id], [h].[Address], [h].[CountryId], [h].[Name], [h].[Rating]
+FROM (
+    SELECT TOP(1) [c].[Id], [c].[Name], [c].[ShortName]
+    FROM [Countries] AS [c]
+    WHERE [c].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Hotels] AS [h] ON [t].[Id] = [h].[CountryId]
+ORDER BY [t].[Id], [h].[Id]
+ 2021-12-17 15:58:45.745 +05:30 [ERR] Something went wrong in the GetCountries System.NullReferenceException: Object reference not set to an instance of an object.
+   at HotelListing.Controllers.CountryController.GetCountry(Int32 id) in C:\Users\Administrator\source\repos\HotelListing\HotelListing\Controllers\CountryController.cs:line 57
+ 2021-12-17 15:58:45.851 +05:30 [INF] Executing ObjectResult, writing value of type 'System.String'.
+ 2021-12-17 15:58:45.878 +05:30 [INF] Executed action HotelListing.Controllers.CountryController.GetCountry (HotelListing) in 23755.8696ms
+ 2021-12-17 15:58:45.879 +05:30 [INF] Executed endpoint 'HotelListing.Controllers.CountryController.GetCountry (HotelListing)'
+ 2021-12-17 15:58:46.053 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:44300/api/country/1 - - - 500 - text/plain;+charset=utf-8 24070.4910ms
+ 2021-12-17 15:59:16.143 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/api/Country/2 - -
+ 2021-12-17 15:59:16.169 +05:30 [INF] Executing endpoint 'HotelListing.Controllers.CountryController.GetCountry (HotelListing)'
+ 2021-12-17 15:59:16.169 +05:30 [INF] Route matched with {action = "GetCountry", controller = "Country"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCountry(Int32) on controller HotelListing.Controllers.CountryController (HotelListing).
+ 2021-12-17 15:59:16.255 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+ 2021-12-17 15:59:16.299 +05:30 [INF] Executed DbCommand (19ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Name], [t].[ShortName], [h].[Id], [h].[Address], [h].[CountryId], [h].[Name], [h].[Rating]
+FROM (
+    SELECT TOP(1) [c].[Id], [c].[Name], [c].[ShortName]
+    FROM [Countries] AS [c]
+    WHERE [c].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Hotels] AS [h] ON [t].[Id] = [h].[CountryId]
+ORDER BY [t].[Id], [h].[Id]
+ 2021-12-17 15:59:39.033 +05:30 [INF] Starting web host
+ 2021-12-17 15:59:44.345 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+ 2021-12-17 15:59:44.352 +05:30 [INF] Hosting environment: Development
+ 2021-12-17 15:59:44.357 +05:30 [INF] Content root path: C:\Users\Administrator\source\repos\HotelListing\HotelListing
+ 2021-12-17 15:59:44.494 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/swagger/index.html - -
+ 2021-12-17 15:59:45.132 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/swagger/index.html - - - 200 - text/html;charset=utf-8 659.5265ms
+ 2021-12-17 15:59:47.779 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/swagger/v1/swagger.json - -
+ 2021-12-17 15:59:48.146 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 366.6479ms
+ 2021-12-17 16:11:34.636 +05:30 [INF] Starting web host
+ 2021-12-17 16:11:36.758 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+ 2021-12-17 16:11:36.763 +05:30 [INF] Hosting environment: Development
+ 2021-12-17 16:11:36.765 +05:30 [INF] Content root path: C:\Users\Administrator\source\repos\HotelListing\HotelListing
+ 2021-12-17 16:11:36.796 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/swagger/index.html - -
+ 2021-12-17 16:11:37.153 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/swagger/index.html - - - 200 - text/html;charset=utf-8 363.1976ms
+ 2021-12-17 16:11:39.149 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/swagger/v1/swagger.json - -
+ 2021-12-17 16:11:39.596 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 446.5021ms
+ 2021-12-17 16:11:50.089 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/api/Hotel - -
+ 2021-12-17 16:11:50.225 +05:30 [INF] Executing endpoint 'HotelListing.Controllers.HotelController.GetAll (HotelListing)'
+ 2021-12-17 16:11:50.311 +05:30 [INF] Route matched with {action = "GetAll", controller = "Hotel"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller HotelListing.Controllers.HotelController (HotelListing).
+ 2021-12-17 16:11:54.139 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+ 2021-12-17 16:11:57.332 +05:30 [INF] Executed DbCommand (202ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [h].[Id], [h].[Address], [h].[CountryId], [h].[Name], [h].[Rating]
+FROM [Hotels] AS [h]
+ 2021-12-17 16:11:57.466 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[HotelListing.Models.HotelDto, HotelListing, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+ 2021-12-17 16:11:57.990 +05:30 [INF] Executed action HotelListing.Controllers.HotelController.GetAll (HotelListing) in 7663.4789ms
+ 2021-12-17 16:11:57.992 +05:30 [INF] Executed endpoint 'HotelListing.Controllers.HotelController.GetAll (HotelListing)'
+ 2021-12-17 16:11:58.012 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/api/Hotel - - - 200 203 application/json;+charset=utf-8 7923.3115ms
+ 2021-12-17 16:17:44.789 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:44300/api/coutnry - -
+ 2021-12-17 16:17:44.805 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:44300/api/coutnry - - - 404 - - 16.5511ms
+ 2021-12-17 16:17:50.291 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:44300/api/coutry - -
+ 2021-12-17 16:17:50.294 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:44300/api/coutry - - - 404 - - 3.6982ms
+ 2021-12-17 16:17:55.796 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:44300/api/country - -
+ 2021-12-17 16:17:55.798 +05:30 [INF] Executing endpoint 'HotelListing.Controllers.CountryController.GetCountries (HotelListing)'
+ 2021-12-17 16:17:55.812 +05:30 [INF] Route matched with {action = "GetCountries", controller = "Country"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCountries() on controller HotelListing.Controllers.CountryController (HotelListing).
+ 2021-12-17 16:17:55.870 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+ 2021-12-17 16:17:55.904 +05:30 [INF] Executed DbCommand (26ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Name], [c].[ShortName]
+FROM [Countries] AS [c]
+ 2021-12-17 16:17:55.915 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[HotelListing.Models.CountryDto, HotelListing, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+ 2021-12-17 16:17:55.923 +05:30 [INF] Executed action HotelListing.Controllers.CountryController.GetCountries (HotelListing) in 110.0551ms
+ 2021-12-17 16:17:55.923 +05:30 [INF] Executed endpoint 'HotelListing.Controllers.CountryController.GetCountries (HotelListing)'
+ 2021-12-17 16:17:55.924 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:44300/api/country - - - 200 172 application/json;+charset=utf-8 127.3469ms
+ 2021-12-17 16:18:05.896 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:44300/api/hotel - -
+ 2021-12-17 16:18:05.898 +05:30 [INF] Executing endpoint 'HotelListing.Controllers.HotelController.GetAll (HotelListing)'
+ 2021-12-17 16:18:05.898 +05:30 [INF] Route matched with {action = "GetAll", controller = "Hotel"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller HotelListing.Controllers.HotelController (HotelListing).
+ 2021-12-17 16:18:05.920 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+ 2021-12-17 16:18:05.929 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [h].[Id], [h].[Address], [h].[CountryId], [h].[Name], [h].[Rating]
+FROM [Hotels] AS [h]
+ 2021-12-17 16:18:05.932 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[HotelListing.Models.HotelDto, HotelListing, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+ 2021-12-17 16:18:05.933 +05:30 [INF] Executed action HotelListing.Controllers.HotelController.GetAll (HotelListing) in 35.0642ms
+ 2021-12-17 16:18:05.934 +05:30 [INF] Executed endpoint 'HotelListing.Controllers.HotelController.GetAll (HotelListing)'
+ 2021-12-17 16:18:05.936 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:44300/api/hotel - - - 200 203 application/json;+charset=utf-8 40.7069ms
+ 2021-12-17 16:24:06.383 +05:30 [INF] Starting web host
+ 2021-12-17 16:24:08.573 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+ 2021-12-17 16:24:08.578 +05:30 [INF] Hosting environment: Development
+ 2021-12-17 16:24:08.580 +05:30 [INF] Content root path: C:\Users\Administrator\source\repos\HotelListing\HotelListing
+ 2021-12-17 16:24:08.613 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/swagger/index.html - -
+ 2021-12-17 16:24:08.830 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/swagger/index.html - - - 200 - text/html;charset=utf-8 220.9341ms
+ 2021-12-17 16:24:10.635 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/swagger/v1/swagger.json - -
+ 2021-12-17 16:24:11.034 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 398.9076ms
+ 2021-12-17 16:24:21.601 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/api/Hotel/1 - -
+ 2021-12-17 16:24:21.783 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The constraint reference ' int' could not be resolved to a type. Register the constraint type with 'Microsoft.AspNetCore.Routing.RouteOptions.ConstraintMap'.
+   at Microsoft.AspNetCore.Routing.DefaultParameterPolicyFactory.Create(RoutePatternParameterPart parameter, String inlineText)
+   at Microsoft.AspNetCore.Routing.ParameterPolicyFactory.Create(RoutePatternParameterPart parameter, RoutePatternParameterPolicyReference reference)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidate(Endpoint endpoint, Int32 score)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidates(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.<AddNode>g__Transition|26_0(DfaNode next, <>c__DisplayClass26_0& )
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.Build()
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher.CreateMatcher(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.DataSourceDependentCache`1.Initialize()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at System.Threading.LazyInitializer.EnsureInitialized[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher..ctor(EndpointDataSource dataSource, Lifetime lifetime, Func`1 matcherBuilderFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherFactory.CreateMatcher(EndpointDataSource dataSource)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.InitializeCoreAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.<Invoke>g__AwaitMatcher|8_0(EndpointRoutingMiddleware middleware, HttpContext httpContext, Task`1 matcherTask)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+ 2021-12-17 16:24:22.163 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/api/Hotel/1 - - - 500 - text/plain 561.7881ms
+ 2021-12-17 16:24:41.801 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/api/Hotel - -
+ 2021-12-17 16:24:41.812 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The constraint reference ' int' could not be resolved to a type. Register the constraint type with 'Microsoft.AspNetCore.Routing.RouteOptions.ConstraintMap'.
+   at Microsoft.AspNetCore.Routing.DefaultParameterPolicyFactory.Create(RoutePatternParameterPart parameter, String inlineText)
+   at Microsoft.AspNetCore.Routing.ParameterPolicyFactory.Create(RoutePatternParameterPart parameter, RoutePatternParameterPolicyReference reference)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidate(Endpoint endpoint, Int32 score)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidates(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.<AddNode>g__Transition|26_0(DfaNode next, <>c__DisplayClass26_0& )
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.Build()
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher.CreateMatcher(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.DataSourceDependentCache`1.Initialize()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at System.Threading.LazyInitializer.EnsureInitialized[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher..ctor(EndpointDataSource dataSource, Lifetime lifetime, Func`1 matcherBuilderFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherFactory.CreateMatcher(EndpointDataSource dataSource)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.InitializeCoreAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.<Invoke>g__AwaitMatcher|8_0(EndpointRoutingMiddleware middleware, HttpContext httpContext, Task`1 matcherTask)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+ 2021-12-17 16:24:41.818 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/api/Hotel - - - 500 - text/plain 17.3808ms
+ 2021-12-17 16:25:19.529 +05:30 [INF] Starting web host
+ 2021-12-17 16:25:22.261 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+ 2021-12-17 16:25:22.271 +05:30 [INF] Hosting environment: Development
+ 2021-12-17 16:25:22.273 +05:30 [INF] Content root path: C:\Users\Administrator\source\repos\HotelListing\HotelListing
+ 2021-12-17 16:25:22.321 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/swagger/index.html - -
+ 2021-12-17 16:25:22.586 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/swagger/index.html - - - 200 - text/html;charset=utf-8 272.2700ms
+ 2021-12-17 16:25:24.646 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/swagger/v1/swagger.json - -
+ 2021-12-17 16:25:25.132 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 485.8780ms
+ 2021-12-17 16:25:25.680 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:44300/api/hotel - -
+ 2021-12-17 16:25:25.837 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The constraint reference ' int' could not be resolved to a type. Register the constraint type with 'Microsoft.AspNetCore.Routing.RouteOptions.ConstraintMap'.
+   at Microsoft.AspNetCore.Routing.DefaultParameterPolicyFactory.Create(RoutePatternParameterPart parameter, String inlineText)
+   at Microsoft.AspNetCore.Routing.ParameterPolicyFactory.Create(RoutePatternParameterPart parameter, RoutePatternParameterPolicyReference reference)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidate(Endpoint endpoint, Int32 score)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidates(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.<AddNode>g__Transition|26_0(DfaNode next, <>c__DisplayClass26_0& )
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.Build()
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher.CreateMatcher(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.DataSourceDependentCache`1.Initialize()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at System.Threading.LazyInitializer.EnsureInitialized[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher..ctor(EndpointDataSource dataSource, Lifetime lifetime, Func`1 matcherBuilderFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherFactory.CreateMatcher(EndpointDataSource dataSource)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.InitializeCoreAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.<Invoke>g__AwaitMatcher|8_0(EndpointRoutingMiddleware middleware, HttpContext httpContext, Task`1 matcherTask)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+ 2021-12-17 16:25:26.066 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:44300/api/hotel - - - 500 - text/plain 386.6106ms
+ 2021-12-17 16:25:46.770 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:44300/api/hotel - -
+ 2021-12-17 16:25:46.777 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The constraint reference ' int' could not be resolved to a type. Register the constraint type with 'Microsoft.AspNetCore.Routing.RouteOptions.ConstraintMap'.
+   at Microsoft.AspNetCore.Routing.DefaultParameterPolicyFactory.Create(RoutePatternParameterPart parameter, String inlineText)
+   at Microsoft.AspNetCore.Routing.ParameterPolicyFactory.Create(RoutePatternParameterPart parameter, RoutePatternParameterPolicyReference reference)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidate(Endpoint endpoint, Int32 score)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidates(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.<AddNode>g__Transition|26_0(DfaNode next, <>c__DisplayClass26_0& )
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.Build()
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher.CreateMatcher(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.DataSourceDependentCache`1.Initialize()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at System.Threading.LazyInitializer.EnsureInitialized[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher..ctor(EndpointDataSource dataSource, Lifetime lifetime, Func`1 matcherBuilderFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherFactory.CreateMatcher(EndpointDataSource dataSource)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.InitializeCoreAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.<Invoke>g__AwaitMatcher|8_0(EndpointRoutingMiddleware middleware, HttpContext httpContext, Task`1 matcherTask)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+ 2021-12-17 16:25:46.781 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:44300/api/hotel - - - 500 - text/plain 11.6534ms
+ 2021-12-17 16:26:02.255 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/api/Hotel - -
+ 2021-12-17 16:26:02.266 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The constraint reference ' int' could not be resolved to a type. Register the constraint type with 'Microsoft.AspNetCore.Routing.RouteOptions.ConstraintMap'.
+   at Microsoft.AspNetCore.Routing.DefaultParameterPolicyFactory.Create(RoutePatternParameterPart parameter, String inlineText)
+   at Microsoft.AspNetCore.Routing.ParameterPolicyFactory.Create(RoutePatternParameterPart parameter, RoutePatternParameterPolicyReference reference)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidate(Endpoint endpoint, Int32 score)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidates(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.<AddNode>g__Transition|26_0(DfaNode next, <>c__DisplayClass26_0& )
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.Build()
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher.CreateMatcher(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.DataSourceDependentCache`1.Initialize()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at System.Threading.LazyInitializer.EnsureInitialized[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher..ctor(EndpointDataSource dataSource, Lifetime lifetime, Func`1 matcherBuilderFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherFactory.CreateMatcher(EndpointDataSource dataSource)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.InitializeCoreAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.<Invoke>g__AwaitMatcher|8_0(EndpointRoutingMiddleware middleware, HttpContext httpContext, Task`1 matcherTask)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+ 2021-12-17 16:26:02.276 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/api/Hotel - - - 500 - text/plain 21.7549ms
+ 2021-12-17 16:26:21.056 +05:30 [INF] Starting web host
+ 2021-12-17 16:26:24.220 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+ 2021-12-17 16:26:24.224 +05:30 [INF] Hosting environment: Development
+ 2021-12-17 16:26:24.226 +05:30 [INF] Content root path: C:\Users\Administrator\source\repos\HotelListing\HotelListing
+ 2021-12-17 16:26:24.273 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/swagger/index.html - -
+ 2021-12-17 16:26:24.728 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/swagger/index.html - - - 200 - text/html;charset=utf-8 458.5402ms
+ 2021-12-17 16:26:26.512 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/swagger/v1/swagger.json - -
+ 2021-12-17 16:26:26.709 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 197.7050ms
+ 2021-12-17 16:26:34.308 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/api/Hotel - -
+ 2021-12-17 16:26:34.367 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The constraint reference ' int' could not be resolved to a type. Register the constraint type with 'Microsoft.AspNetCore.Routing.RouteOptions.ConstraintMap'.
+   at Microsoft.AspNetCore.Routing.DefaultParameterPolicyFactory.Create(RoutePatternParameterPart parameter, String inlineText)
+   at Microsoft.AspNetCore.Routing.ParameterPolicyFactory.Create(RoutePatternParameterPart parameter, RoutePatternParameterPolicyReference reference)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidate(Endpoint endpoint, Int32 score)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidates(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.<AddNode>g__Transition|26_0(DfaNode next, <>c__DisplayClass26_0& )
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.Build()
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher.CreateMatcher(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.DataSourceDependentCache`1.Initialize()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at System.Threading.LazyInitializer.EnsureInitialized[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher..ctor(EndpointDataSource dataSource, Lifetime lifetime, Func`1 matcherBuilderFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherFactory.CreateMatcher(EndpointDataSource dataSource)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.InitializeCoreAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.<Invoke>g__AwaitMatcher|8_0(EndpointRoutingMiddleware middleware, HttpContext httpContext, Task`1 matcherTask)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+ 2021-12-17 16:26:34.434 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/api/Hotel - - - 500 - text/plain 128.3949ms
+ 2021-12-17 16:26:51.249 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:44300/api/hotel - -
+ 2021-12-17 16:26:51.268 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The constraint reference ' int' could not be resolved to a type. Register the constraint type with 'Microsoft.AspNetCore.Routing.RouteOptions.ConstraintMap'.
+   at Microsoft.AspNetCore.Routing.DefaultParameterPolicyFactory.Create(RoutePatternParameterPart parameter, String inlineText)
+   at Microsoft.AspNetCore.Routing.ParameterPolicyFactory.Create(RoutePatternParameterPart parameter, RoutePatternParameterPolicyReference reference)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidate(Endpoint endpoint, Int32 score)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidates(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.<AddNode>g__Transition|26_0(DfaNode next, <>c__DisplayClass26_0& )
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.Build()
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher.CreateMatcher(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.DataSourceDependentCache`1.Initialize()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at System.Threading.LazyInitializer.EnsureInitialized[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher..ctor(EndpointDataSource dataSource, Lifetime lifetime, Func`1 matcherBuilderFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherFactory.CreateMatcher(EndpointDataSource dataSource)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.InitializeCoreAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.<Invoke>g__AwaitMatcher|8_0(EndpointRoutingMiddleware middleware, HttpContext httpContext, Task`1 matcherTask)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+ 2021-12-17 16:26:51.315 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:44300/api/hotel - - - 500 - text/plain 63.9771ms
+ 2021-12-17 16:26:52.916 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:44300/api/hotel - -
+ 2021-12-17 16:26:52.959 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The constraint reference ' int' could not be resolved to a type. Register the constraint type with 'Microsoft.AspNetCore.Routing.RouteOptions.ConstraintMap'.
+   at Microsoft.AspNetCore.Routing.DefaultParameterPolicyFactory.Create(RoutePatternParameterPart parameter, String inlineText)
+   at Microsoft.AspNetCore.Routing.ParameterPolicyFactory.Create(RoutePatternParameterPart parameter, RoutePatternParameterPolicyReference reference)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidate(Endpoint endpoint, Int32 score)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidates(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.<AddNode>g__Transition|26_0(DfaNode next, <>c__DisplayClass26_0& )
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.Build()
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher.CreateMatcher(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.DataSourceDependentCache`1.Initialize()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at System.Threading.LazyInitializer.EnsureInitialized[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher..ctor(EndpointDataSource dataSource, Lifetime lifetime, Func`1 matcherBuilderFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherFactory.CreateMatcher(EndpointDataSource dataSource)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.InitializeCoreAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.<Invoke>g__AwaitMatcher|8_0(EndpointRoutingMiddleware middleware, HttpContext httpContext, Task`1 matcherTask)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+ 2021-12-17 16:26:53.014 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:44300/api/hotel - - - 500 - text/plain 97.5010ms
+ 2021-12-17 16:26:58.747 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:44300/api/hotel/1 - -
+ 2021-12-17 16:26:58.865 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The constraint reference ' int' could not be resolved to a type. Register the constraint type with 'Microsoft.AspNetCore.Routing.RouteOptions.ConstraintMap'.
+   at Microsoft.AspNetCore.Routing.DefaultParameterPolicyFactory.Create(RoutePatternParameterPart parameter, String inlineText)
+   at Microsoft.AspNetCore.Routing.ParameterPolicyFactory.Create(RoutePatternParameterPart parameter, RoutePatternParameterPolicyReference reference)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidate(Endpoint endpoint, Int32 score)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidates(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.<AddNode>g__Transition|26_0(DfaNode next, <>c__DisplayClass26_0& )
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.Build()
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher.CreateMatcher(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.DataSourceDependentCache`1.Initialize()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at System.Threading.LazyInitializer.EnsureInitialized[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher..ctor(EndpointDataSource dataSource, Lifetime lifetime, Func`1 matcherBuilderFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherFactory.CreateMatcher(EndpointDataSource dataSource)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.InitializeCoreAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.<Invoke>g__AwaitMatcher|8_0(EndpointRoutingMiddleware middleware, HttpContext httpContext, Task`1 matcherTask)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+ 2021-12-17 16:26:58.893 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:44300/api/hotel/1 - - - 500 - text/plain 146.6958ms
+ 2021-12-17 16:27:21.067 +05:30 [INF] Starting web host
+ 2021-12-17 16:30:25.839 +05:30 [INF] Starting web host
+ 2021-12-17 16:30:35.730 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+ 2021-12-17 16:30:35.734 +05:30 [INF] Hosting environment: Development
+ 2021-12-17 16:30:35.736 +05:30 [INF] Content root path: C:\Users\Administrator\source\repos\HotelListing\HotelListing
+ 2021-12-17 16:30:36.131 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/swagger/index.html - -
+ 2021-12-17 16:30:38.031 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/swagger/index.html - - - 200 - text/html;charset=utf-8 1929.4360ms
+ 2021-12-17 16:30:44.780 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/swagger/v1/swagger.json - -
+ 2021-12-17 16:30:46.126 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 1344.9973ms
+ 2021-12-17 16:30:57.741 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/api/Hotel - -
+ 2021-12-17 16:30:58.196 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The constraint reference ' int' could not be resolved to a type. Register the constraint type with 'Microsoft.AspNetCore.Routing.RouteOptions.ConstraintMap'.
+   at Microsoft.AspNetCore.Routing.DefaultParameterPolicyFactory.Create(RoutePatternParameterPart parameter, String inlineText)
+   at Microsoft.AspNetCore.Routing.ParameterPolicyFactory.Create(RoutePatternParameterPart parameter, RoutePatternParameterPolicyReference reference)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidate(Endpoint endpoint, Int32 score)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidates(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.<AddNode>g__Transition|26_0(DfaNode next, <>c__DisplayClass26_0& )
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.Build()
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher.CreateMatcher(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.DataSourceDependentCache`1.Initialize()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at System.Threading.LazyInitializer.EnsureInitialized[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher..ctor(EndpointDataSource dataSource, Lifetime lifetime, Func`1 matcherBuilderFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherFactory.CreateMatcher(EndpointDataSource dataSource)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.InitializeCoreAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.<Invoke>g__AwaitMatcher|8_0(EndpointRoutingMiddleware middleware, HttpContext httpContext, Task`1 matcherTask)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+ 2021-12-17 16:30:58.927 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/api/Hotel - - - 500 - text/plain 1186.1852ms
+ 2021-12-17 16:31:20.099 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/api/Hotel/1 - -
+ 2021-12-17 16:31:20.120 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The constraint reference ' int' could not be resolved to a type. Register the constraint type with 'Microsoft.AspNetCore.Routing.RouteOptions.ConstraintMap'.
+   at Microsoft.AspNetCore.Routing.DefaultParameterPolicyFactory.Create(RoutePatternParameterPart parameter, String inlineText)
+   at Microsoft.AspNetCore.Routing.ParameterPolicyFactory.Create(RoutePatternParameterPart parameter, RoutePatternParameterPolicyReference reference)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidate(Endpoint endpoint, Int32 score)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidates(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.<AddNode>g__Transition|26_0(DfaNode next, <>c__DisplayClass26_0& )
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.Build()
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher.CreateMatcher(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.DataSourceDependentCache`1.Initialize()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at System.Threading.LazyInitializer.EnsureInitialized[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher..ctor(EndpointDataSource dataSource, Lifetime lifetime, Func`1 matcherBuilderFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherFactory.CreateMatcher(EndpointDataSource dataSource)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.InitializeCoreAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.<Invoke>g__AwaitMatcher|8_0(EndpointRoutingMiddleware middleware, HttpContext httpContext, Task`1 matcherTask)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+ 2021-12-17 16:31:20.436 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/api/Hotel/1 - - - 500 - text/plain 336.2537ms
+ 2021-12-17 16:31:40.199 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/api/Country - -
+ 2021-12-17 16:31:40.247 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The constraint reference ' int' could not be resolved to a type. Register the constraint type with 'Microsoft.AspNetCore.Routing.RouteOptions.ConstraintMap'.
+   at Microsoft.AspNetCore.Routing.DefaultParameterPolicyFactory.Create(RoutePatternParameterPart parameter, String inlineText)
+   at Microsoft.AspNetCore.Routing.ParameterPolicyFactory.Create(RoutePatternParameterPart parameter, RoutePatternParameterPolicyReference reference)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidate(Endpoint endpoint, Int32 score)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidates(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.<AddNode>g__Transition|26_0(DfaNode next, <>c__DisplayClass26_0& )
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.Build()
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher.CreateMatcher(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.DataSourceDependentCache`1.Initialize()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at System.Threading.LazyInitializer.EnsureInitialized[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher..ctor(EndpointDataSource dataSource, Lifetime lifetime, Func`1 matcherBuilderFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherFactory.CreateMatcher(EndpointDataSource dataSource)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.InitializeCoreAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.<Invoke>g__AwaitMatcher|8_0(EndpointRoutingMiddleware middleware, HttpContext httpContext, Task`1 matcherTask)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+ 2021-12-17 16:31:40.279 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/api/Country - - - 500 - text/plain 80.2149ms
+ 2021-12-17 16:32:06.409 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/api/Country/1 - -
+ 2021-12-17 16:32:06.417 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The constraint reference ' int' could not be resolved to a type. Register the constraint type with 'Microsoft.AspNetCore.Routing.RouteOptions.ConstraintMap'.
+   at Microsoft.AspNetCore.Routing.DefaultParameterPolicyFactory.Create(RoutePatternParameterPart parameter, String inlineText)
+   at Microsoft.AspNetCore.Routing.ParameterPolicyFactory.Create(RoutePatternParameterPart parameter, RoutePatternParameterPolicyReference reference)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidate(Endpoint endpoint, Int32 score)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidates(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.<AddNode>g__Transition|26_0(DfaNode next, <>c__DisplayClass26_0& )
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.Build()
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher.CreateMatcher(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.DataSourceDependentCache`1.Initialize()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at System.Threading.LazyInitializer.EnsureInitialized[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher..ctor(EndpointDataSource dataSource, Lifetime lifetime, Func`1 matcherBuilderFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherFactory.CreateMatcher(EndpointDataSource dataSource)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.InitializeCoreAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.<Invoke>g__AwaitMatcher|8_0(EndpointRoutingMiddleware middleware, HttpContext httpContext, Task`1 matcherTask)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+ 2021-12-17 16:32:06.547 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/api/Country/1 - - - 500 - text/plain 129.7551ms
+ 2021-12-17 16:37:06.836 +05:30 [INF] Starting web host
+ 2021-12-17 16:38:02.391 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+ 2021-12-17 16:38:02.396 +05:30 [INF] Hosting environment: Development
+ 2021-12-17 16:38:02.398 +05:30 [INF] Content root path: C:\Users\Administrator\source\repos\HotelListing\HotelListing
+ 2021-12-17 16:38:03.047 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/swagger/index.html - -
+ 2021-12-17 16:38:04.602 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/swagger/index.html - - - 200 - text/html;charset=utf-8 1560.2850ms
+ 2021-12-17 16:38:11.071 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/swagger/v1/swagger.json - -
+ 2021-12-17 16:38:12.104 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 1034.5596ms
+ 2021-12-17 16:38:20.677 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/api/Country - -
+ 2021-12-17 16:38:21.300 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The constraint reference ' int' could not be resolved to a type. Register the constraint type with 'Microsoft.AspNetCore.Routing.RouteOptions.ConstraintMap'.
+   at Microsoft.AspNetCore.Routing.DefaultParameterPolicyFactory.Create(RoutePatternParameterPart parameter, String inlineText)
+   at Microsoft.AspNetCore.Routing.ParameterPolicyFactory.Create(RoutePatternParameterPart parameter, RoutePatternParameterPolicyReference reference)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidate(Endpoint endpoint, Int32 score)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidates(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.<AddNode>g__Transition|26_0(DfaNode next, <>c__DisplayClass26_0& )
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.Build()
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher.CreateMatcher(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.DataSourceDependentCache`1.Initialize()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at System.Threading.LazyInitializer.EnsureInitialized[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher..ctor(EndpointDataSource dataSource, Lifetime lifetime, Func`1 matcherBuilderFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherFactory.CreateMatcher(EndpointDataSource dataSource)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.InitializeCoreAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.<Invoke>g__AwaitMatcher|8_0(EndpointRoutingMiddleware middleware, HttpContext httpContext, Task`1 matcherTask)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+ 2021-12-17 16:38:21.562 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/api/Country - - - 500 - text/plain 885.3300ms
+ 2021-12-17 18:41:35.665 +05:30 [INF] Starting web host
+ 2021-12-17 18:41:46.393 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+ 2021-12-17 18:41:46.396 +05:30 [INF] Hosting environment: Development
+ 2021-12-17 18:41:46.397 +05:30 [INF] Content root path: C:\Users\Administrator\source\repos\HotelListing\HotelListing
+ 2021-12-17 18:41:46.735 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:44300/api/hotel/1 - -
+ 2021-12-17 18:41:46.735 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/swagger/index.html - -
+ 2021-12-17 18:41:47.156 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/swagger/index.html - - - 200 - text/html;charset=utf-8 424.1479ms
+ 2021-12-17 18:41:46.887 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The constraint reference ' int' could not be resolved to a type. Register the constraint type with 'Microsoft.AspNetCore.Routing.RouteOptions.ConstraintMap'.
+   at Microsoft.AspNetCore.Routing.DefaultParameterPolicyFactory.Create(RoutePatternParameterPart parameter, String inlineText)
+   at Microsoft.AspNetCore.Routing.ParameterPolicyFactory.Create(RoutePatternParameterPart parameter, RoutePatternParameterPolicyReference reference)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidate(Endpoint endpoint, Int32 score)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidates(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.<AddNode>g__Transition|26_0(DfaNode next, <>c__DisplayClass26_0& )
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.Build()
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher.CreateMatcher(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.DataSourceDependentCache`1.Initialize()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at System.Threading.LazyInitializer.EnsureInitialized[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher..ctor(EndpointDataSource dataSource, Lifetime lifetime, Func`1 matcherBuilderFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherFactory.CreateMatcher(EndpointDataSource dataSource)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.InitializeCoreAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.<Invoke>g__AwaitMatcher|8_0(EndpointRoutingMiddleware middleware, HttpContext httpContext, Task`1 matcherTask)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+ 2021-12-17 18:41:48.233 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:44300/api/hotel/1 - - - 500 - text/plain 1502.4923ms
+ 2021-12-17 18:41:49.680 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/swagger/v1/swagger.json - -
+ 2021-12-17 18:41:50.105 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 424.6644ms
+ 2021-12-17 18:42:18.222 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/api/Country - -
+ 2021-12-17 18:42:18.226 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The constraint reference ' int' could not be resolved to a type. Register the constraint type with 'Microsoft.AspNetCore.Routing.RouteOptions.ConstraintMap'.
+   at Microsoft.AspNetCore.Routing.DefaultParameterPolicyFactory.Create(RoutePatternParameterPart parameter, String inlineText)
+   at Microsoft.AspNetCore.Routing.ParameterPolicyFactory.Create(RoutePatternParameterPart parameter, RoutePatternParameterPolicyReference reference)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidate(Endpoint endpoint, Int32 score)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidates(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.<AddNode>g__Transition|26_0(DfaNode next, <>c__DisplayClass26_0& )
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.Build()
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher.CreateMatcher(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.DataSourceDependentCache`1.Initialize()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at System.Threading.LazyInitializer.EnsureInitialized[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher..ctor(EndpointDataSource dataSource, Lifetime lifetime, Func`1 matcherBuilderFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherFactory.CreateMatcher(EndpointDataSource dataSource)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.InitializeCoreAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.<Invoke>g__AwaitMatcher|8_0(EndpointRoutingMiddleware middleware, HttpContext httpContext, Task`1 matcherTask)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+ 2021-12-17 18:42:18.281 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/api/Country - - - 500 - text/plain 58.8026ms
+ 2021-12-17 18:42:19.263 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/api/Country - -
+ 2021-12-17 18:42:19.268 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The constraint reference ' int' could not be resolved to a type. Register the constraint type with 'Microsoft.AspNetCore.Routing.RouteOptions.ConstraintMap'.
+   at Microsoft.AspNetCore.Routing.DefaultParameterPolicyFactory.Create(RoutePatternParameterPart parameter, String inlineText)
+   at Microsoft.AspNetCore.Routing.ParameterPolicyFactory.Create(RoutePatternParameterPart parameter, RoutePatternParameterPolicyReference reference)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidate(Endpoint endpoint, Int32 score)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidates(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.<AddNode>g__Transition|26_0(DfaNode next, <>c__DisplayClass26_0& )
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.Build()
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher.CreateMatcher(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.DataSourceDependentCache`1.Initialize()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at System.Threading.LazyInitializer.EnsureInitialized[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher..ctor(EndpointDataSource dataSource, Lifetime lifetime, Func`1 matcherBuilderFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherFactory.CreateMatcher(EndpointDataSource dataSource)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.InitializeCoreAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.<Invoke>g__AwaitMatcher|8_0(EndpointRoutingMiddleware middleware, HttpContext httpContext, Task`1 matcherTask)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+ 2021-12-17 18:42:19.281 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/api/Country - - - 500 - text/plain 17.8744ms
+ 2021-12-17 18:45:38.680 +05:30 [INF] Starting web host
+ 2021-12-17 18:45:39.897 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+ 2021-12-17 18:45:39.901 +05:30 [INF] Hosting environment: Development
+ 2021-12-17 18:45:39.902 +05:30 [INF] Content root path: C:\Users\Administrator\source\repos\HotelListing\HotelListing
+ 2021-12-17 18:45:39.927 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/swagger/index.html - -
+ 2021-12-17 18:45:40.129 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/swagger/index.html - - - 200 - text/html;charset=utf-8 204.5239ms
+ 2021-12-17 18:45:41.094 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/swagger/v1/swagger.json - -
+ 2021-12-17 18:45:41.249 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 154.7401ms
+ 2021-12-17 18:48:30.034 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/api/Country - -
+ 2021-12-17 18:48:30.102 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The constraint reference ' int' could not be resolved to a type. Register the constraint type with 'Microsoft.AspNetCore.Routing.RouteOptions.ConstraintMap'.
+   at Microsoft.AspNetCore.Routing.DefaultParameterPolicyFactory.Create(RoutePatternParameterPart parameter, String inlineText)
+   at Microsoft.AspNetCore.Routing.ParameterPolicyFactory.Create(RoutePatternParameterPart parameter, RoutePatternParameterPolicyReference reference)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidate(Endpoint endpoint, Int32 score)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidates(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.<AddNode>g__Transition|26_0(DfaNode next, <>c__DisplayClass26_0& )
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.Build()
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher.CreateMatcher(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.DataSourceDependentCache`1.Initialize()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at System.Threading.LazyInitializer.EnsureInitialized[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher..ctor(EndpointDataSource dataSource, Lifetime lifetime, Func`1 matcherBuilderFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherFactory.CreateMatcher(EndpointDataSource dataSource)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.InitializeCoreAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.<Invoke>g__AwaitMatcher|8_0(EndpointRoutingMiddleware middleware, HttpContext httpContext, Task`1 matcherTask)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+ 2021-12-17 18:48:30.187 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/api/Country - - - 500 - text/plain 153.1347ms
+ 2021-12-17 19:27:15.188 +05:30 [INF] Starting web host
+ 2021-12-17 19:27:16.559 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+ 2021-12-17 19:27:16.563 +05:30 [INF] Hosting environment: Development
+ 2021-12-17 19:27:16.566 +05:30 [INF] Content root path: C:\Users\Administrator\source\repos\HotelListing\HotelListing
+ 2021-12-17 19:27:16.596 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/swagger/index.html - -
+ 2021-12-17 19:27:16.802 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/swagger/index.html - - - 200 - text/html;charset=utf-8 208.9838ms
+ 2021-12-17 19:27:17.754 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/swagger/v1/swagger.json - -
+ 2021-12-17 19:27:17.939 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 185.0962ms
+ 2021-12-17 19:27:25.266 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/api/Country - -
+ 2021-12-17 19:27:25.374 +05:30 [INF] Executing endpoint 'HotelListing.Controllers.CountryController.GetCountries (HotelListing)'
+ 2021-12-17 19:27:25.593 +05:30 [INF] Route matched with {action = "GetCountries", controller = "Country"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCountries() on controller HotelListing.Controllers.CountryController (HotelListing).
+ 2021-12-17 19:27:28.375 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+ 2021-12-17 19:27:33.183 +05:30 [INF] Executed DbCommand (293ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Name], [c].[ShortName]
+FROM [Countries] AS [c]
+ 2021-12-17 19:27:33.319 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[HotelListing.Models.CountryDto, HotelListing, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+ 2021-12-17 19:27:33.880 +05:30 [INF] Executed action HotelListing.Controllers.CountryController.GetCountries (HotelListing) in 8271.0854ms
+ 2021-12-17 19:27:33.882 +05:30 [INF] Executed endpoint 'HotelListing.Controllers.CountryController.GetCountries (HotelListing)'
+ 2021-12-17 19:27:33.893 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/api/Country - - - 200 172 application/json;+charset=utf-8 8626.9867ms
+ 2021-12-17 19:27:46.476 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/api/Country/1 - -
+ 2021-12-17 19:27:46.478 +05:30 [INF] Executing endpoint 'HotelListing.Controllers.CountryController.GetCountry (HotelListing)'
+ 2021-12-17 19:27:46.554 +05:30 [INF] Route matched with {action = "GetCountry", controller = "Country"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCountry(Int32) on controller HotelListing.Controllers.CountryController (HotelListing).
+ 2021-12-17 19:27:46.633 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+ 2021-12-17 19:27:47.147 +05:30 [INF] Executed DbCommand (255ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Name], [t].[ShortName], [h].[Id], [h].[Address], [h].[CountryId], [h].[Name], [h].[Rating]
+FROM (
+    SELECT TOP(1) [c].[Id], [c].[Name], [c].[ShortName]
+    FROM [Countries] AS [c]
+    WHERE [c].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Hotels] AS [h] ON [t].[Id] = [h].[CountryId]
+ORDER BY [t].[Id], [h].[Id]
+ 2021-12-17 19:27:47.177 +05:30 [INF] Executing OkObjectResult, writing value of type 'HotelListing.Models.CountryDto'.
+ 2021-12-17 19:27:47.180 +05:30 [INF] Executed action HotelListing.Controllers.CountryController.GetCountry (HotelListing) in 625.2987ms
+ 2021-12-17 19:27:47.180 +05:30 [INF] Executed endpoint 'HotelListing.Controllers.CountryController.GetCountry (HotelListing)'
+ 2021-12-17 19:27:47.181 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/api/Country/1 - - - 200 109 application/json;+charset=utf-8 704.7802ms
+ 2021-12-17 19:28:34.496 +05:30 [INF] Starting web host
+ 2021-12-17 19:28:36.044 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+ 2021-12-17 19:28:36.047 +05:30 [INF] Hosting environment: Development
+ 2021-12-17 19:28:36.049 +05:30 [INF] Content root path: C:\Users\Administrator\source\repos\HotelListing\HotelListing
+ 2021-12-17 19:28:36.071 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/swagger/index.html - -
+ 2021-12-17 19:28:36.221 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/swagger/index.html - - - 200 - text/html;charset=utf-8 154.6492ms
+ 2021-12-17 19:28:37.424 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/swagger/v1/swagger.json - -
+ 2021-12-17 19:28:37.531 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 106.8869ms
+ 2021-12-17 19:28:47.249 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/api/Hotel - -
+ 2021-12-17 19:28:47.335 +05:30 [INF] Executing endpoint 'HotelListing.Controllers.HotelController.GetAll (HotelListing)'
+ 2021-12-17 19:28:47.445 +05:30 [INF] Route matched with {action = "GetAll", controller = "Hotel"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller HotelListing.Controllers.HotelController (HotelListing).
+ 2021-12-17 19:28:56.050 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+ 2021-12-17 19:28:57.140 +05:30 [INF] Executed DbCommand (83ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [h].[Id], [h].[Address], [h].[CountryId], [h].[Name], [h].[Rating]
+FROM [Hotels] AS [h]
+ 2021-12-17 19:28:57.229 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[HotelListing.Models.HotelDto, HotelListing, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+ 2021-12-17 19:28:57.398 +05:30 [INF] Executed action HotelListing.Controllers.HotelController.GetAll (HotelListing) in 9946.6737ms
+ 2021-12-17 19:28:57.400 +05:30 [INF] Executed endpoint 'HotelListing.Controllers.HotelController.GetAll (HotelListing)'
+ 2021-12-17 19:28:57.406 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/api/Hotel - - - 200 203 application/json;+charset=utf-8 10157.0551ms
+ 2021-12-17 19:29:32.530 +05:30 [INF] Starting web host
+ 2021-12-17 19:29:34.407 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+ 2021-12-17 19:29:34.410 +05:30 [INF] Hosting environment: Development
+ 2021-12-17 19:29:34.412 +05:30 [INF] Content root path: C:\Users\Administrator\source\repos\HotelListing\HotelListing
+ 2021-12-17 19:29:34.428 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/swagger/index.html - -
+ 2021-12-17 19:29:34.668 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/swagger/index.html - - - 200 - text/html;charset=utf-8 242.5224ms
+ 2021-12-17 19:29:35.626 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/swagger/v1/swagger.json - -
+ 2021-12-17 19:29:35.761 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 134.9389ms
+ 2021-12-17 19:29:50.188 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/api/Hotel/Get/1 - -
+ 2021-12-17 19:29:50.226 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The constraint reference ' int' could not be resolved to a type. Register the constraint type with 'Microsoft.AspNetCore.Routing.RouteOptions.ConstraintMap'.
+   at Microsoft.AspNetCore.Routing.DefaultParameterPolicyFactory.Create(RoutePatternParameterPart parameter, String inlineText)
+   at Microsoft.AspNetCore.Routing.ParameterPolicyFactory.Create(RoutePatternParameterPart parameter, RoutePatternParameterPolicyReference reference)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidate(Endpoint endpoint, Int32 score)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidates(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.<AddNode>g__Transition|26_0(DfaNode next, <>c__DisplayClass26_0& )
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.Build()
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher.CreateMatcher(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.DataSourceDependentCache`1.Initialize()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at System.Threading.LazyInitializer.EnsureInitialized[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher..ctor(EndpointDataSource dataSource, Lifetime lifetime, Func`1 matcherBuilderFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherFactory.CreateMatcher(EndpointDataSource dataSource)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.InitializeCoreAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.<Invoke>g__AwaitMatcher|8_0(EndpointRoutingMiddleware middleware, HttpContext httpContext, Task`1 matcherTask)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+ 2021-12-17 19:29:50.438 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/api/Hotel/Get/1 - - - 500 - text/plain 249.2447ms
+ 2021-12-17 19:30:16.846 +05:30 [INF] Starting web host
+ 2021-12-17 19:30:18.467 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+ 2021-12-17 19:30:18.471 +05:30 [INF] Hosting environment: Development
+ 2021-12-17 19:30:18.472 +05:30 [INF] Content root path: C:\Users\Administrator\source\repos\HotelListing\HotelListing
+ 2021-12-17 19:30:18.490 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/swagger/index.html - -
+ 2021-12-17 19:30:18.639 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/swagger/index.html - - - 200 - text/html;charset=utf-8 150.2410ms
+ 2021-12-17 19:30:19.726 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/swagger/v1/swagger.json - -
+ 2021-12-17 19:30:19.863 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 141.5598ms
+ 2021-12-17 19:30:25.196 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/api/Country/2 - -
+ 2021-12-17 19:30:25.234 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The constraint reference ' int' could not be resolved to a type. Register the constraint type with 'Microsoft.AspNetCore.Routing.RouteOptions.ConstraintMap'.
+   at Microsoft.AspNetCore.Routing.DefaultParameterPolicyFactory.Create(RoutePatternParameterPart parameter, String inlineText)
+   at Microsoft.AspNetCore.Routing.ParameterPolicyFactory.Create(RoutePatternParameterPart parameter, RoutePatternParameterPolicyReference reference)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidate(Endpoint endpoint, Int32 score)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidates(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.<AddNode>g__Transition|26_0(DfaNode next, <>c__DisplayClass26_0& )
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.Build()
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher.CreateMatcher(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.DataSourceDependentCache`1.Initialize()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at System.Threading.LazyInitializer.EnsureInitialized[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher..ctor(EndpointDataSource dataSource, Lifetime lifetime, Func`1 matcherBuilderFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherFactory.CreateMatcher(EndpointDataSource dataSource)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.InitializeCoreAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.<Invoke>g__AwaitMatcher|8_0(EndpointRoutingMiddleware middleware, HttpContext httpContext, Task`1 matcherTask)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+ 2021-12-17 19:30:25.303 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/api/Country/2 - - - 500 - text/plain 106.5976ms
+ 2021-12-17 19:30:33.776 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/api/Hotel - -
+ 2021-12-17 19:30:33.780 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The constraint reference ' int' could not be resolved to a type. Register the constraint type with 'Microsoft.AspNetCore.Routing.RouteOptions.ConstraintMap'.
+   at Microsoft.AspNetCore.Routing.DefaultParameterPolicyFactory.Create(RoutePatternParameterPart parameter, String inlineText)
+   at Microsoft.AspNetCore.Routing.ParameterPolicyFactory.Create(RoutePatternParameterPart parameter, RoutePatternParameterPolicyReference reference)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidate(Endpoint endpoint, Int32 score)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidates(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.<AddNode>g__Transition|26_0(DfaNode next, <>c__DisplayClass26_0& )
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.Build()
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher.CreateMatcher(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.DataSourceDependentCache`1.Initialize()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at System.Threading.LazyInitializer.EnsureInitialized[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher..ctor(EndpointDataSource dataSource, Lifetime lifetime, Func`1 matcherBuilderFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherFactory.CreateMatcher(EndpointDataSource dataSource)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.InitializeCoreAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.<Invoke>g__AwaitMatcher|8_0(EndpointRoutingMiddleware middleware, HttpContext httpContext, Task`1 matcherTask)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+ 2021-12-17 19:30:33.792 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/api/Hotel - - - 500 - text/plain 16.0857ms
+ 2021-12-17 19:57:29.410 +05:30 [INF] Starting web host
+ 2021-12-17 19:57:34.787 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+ 2021-12-17 19:57:34.791 +05:30 [INF] Hosting environment: Development
+ 2021-12-17 19:57:34.792 +05:30 [INF] Content root path: C:\Users\Administrator\source\repos\HotelListing\HotelListing
+ 2021-12-17 19:57:34.961 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/swagger/index.html - -
+ 2021-12-17 19:57:35.580 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/swagger/index.html - - - 200 - text/html;charset=utf-8 622.4332ms
+ 2021-12-17 19:57:36.534 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/swagger/v1/swagger.json - -
+ 2021-12-17 19:57:36.753 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 219.0167ms
+ 2021-12-17 19:57:41.969 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/api/Country - -
+ 2021-12-17 19:57:42.066 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The constraint reference ' int' could not be resolved to a type. Register the constraint type with 'Microsoft.AspNetCore.Routing.RouteOptions.ConstraintMap'.
+   at Microsoft.AspNetCore.Routing.DefaultParameterPolicyFactory.Create(RoutePatternParameterPart parameter, String inlineText)
+   at Microsoft.AspNetCore.Routing.ParameterPolicyFactory.Create(RoutePatternParameterPart parameter, RoutePatternParameterPolicyReference reference)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidate(Endpoint endpoint, Int32 score)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidates(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.<AddNode>g__Transition|26_0(DfaNode next, <>c__DisplayClass26_0& )
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.Build()
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher.CreateMatcher(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.DataSourceDependentCache`1.Initialize()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at System.Threading.LazyInitializer.EnsureInitialized[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher..ctor(EndpointDataSource dataSource, Lifetime lifetime, Func`1 matcherBuilderFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherFactory.CreateMatcher(EndpointDataSource dataSource)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.InitializeCoreAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.<Invoke>g__AwaitMatcher|8_0(EndpointRoutingMiddleware middleware, HttpContext httpContext, Task`1 matcherTask)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+ 2021-12-17 19:57:42.402 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/api/Country - - - 500 - text/plain 432.5474ms
+ 2021-12-17 19:57:50.203 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/api/Country/1 - -
+ 2021-12-17 19:57:50.208 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The constraint reference ' int' could not be resolved to a type. Register the constraint type with 'Microsoft.AspNetCore.Routing.RouteOptions.ConstraintMap'.
+   at Microsoft.AspNetCore.Routing.DefaultParameterPolicyFactory.Create(RoutePatternParameterPart parameter, String inlineText)
+   at Microsoft.AspNetCore.Routing.ParameterPolicyFactory.Create(RoutePatternParameterPart parameter, RoutePatternParameterPolicyReference reference)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidate(Endpoint endpoint, Int32 score)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidates(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.<AddNode>g__Transition|26_0(DfaNode next, <>c__DisplayClass26_0& )
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.Build()
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher.CreateMatcher(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.DataSourceDependentCache`1.Initialize()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at System.Threading.LazyInitializer.EnsureInitialized[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher..ctor(EndpointDataSource dataSource, Lifetime lifetime, Func`1 matcherBuilderFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherFactory.CreateMatcher(EndpointDataSource dataSource)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.InitializeCoreAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.<Invoke>g__AwaitMatcher|8_0(EndpointRoutingMiddleware middleware, HttpContext httpContext, Task`1 matcherTask)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+ 2021-12-17 19:57:50.224 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/api/Country/1 - - - 500 - text/plain 20.0293ms
+ 2021-12-17 19:57:55.611 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/api/Hotel - -
+ 2021-12-17 19:57:55.617 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The constraint reference ' int' could not be resolved to a type. Register the constraint type with 'Microsoft.AspNetCore.Routing.RouteOptions.ConstraintMap'.
+   at Microsoft.AspNetCore.Routing.DefaultParameterPolicyFactory.Create(RoutePatternParameterPart parameter, String inlineText)
+   at Microsoft.AspNetCore.Routing.ParameterPolicyFactory.Create(RoutePatternParameterPart parameter, RoutePatternParameterPolicyReference reference)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidate(Endpoint endpoint, Int32 score)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidates(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.<AddNode>g__Transition|26_0(DfaNode next, <>c__DisplayClass26_0& )
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.Build()
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher.CreateMatcher(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.DataSourceDependentCache`1.Initialize()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at System.Threading.LazyInitializer.EnsureInitialized[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher..ctor(EndpointDataSource dataSource, Lifetime lifetime, Func`1 matcherBuilderFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherFactory.CreateMatcher(EndpointDataSource dataSource)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.InitializeCoreAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.<Invoke>g__AwaitMatcher|8_0(EndpointRoutingMiddleware middleware, HttpContext httpContext, Task`1 matcherTask)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+ 2021-12-17 19:57:55.621 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/api/Hotel - - - 500 - text/plain 9.4467ms
+ 2021-12-17 19:58:04.837 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/api/Hotel/api/Hotel/1 - -
+ 2021-12-17 19:58:04.847 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The constraint reference ' int' could not be resolved to a type. Register the constraint type with 'Microsoft.AspNetCore.Routing.RouteOptions.ConstraintMap'.
+   at Microsoft.AspNetCore.Routing.DefaultParameterPolicyFactory.Create(RoutePatternParameterPart parameter, String inlineText)
+   at Microsoft.AspNetCore.Routing.ParameterPolicyFactory.Create(RoutePatternParameterPart parameter, RoutePatternParameterPolicyReference reference)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidate(Endpoint endpoint, Int32 score)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidates(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.<AddNode>g__Transition|26_0(DfaNode next, <>c__DisplayClass26_0& )
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.Build()
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher.CreateMatcher(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.DataSourceDependentCache`1.Initialize()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at System.Threading.LazyInitializer.EnsureInitialized[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher..ctor(EndpointDataSource dataSource, Lifetime lifetime, Func`1 matcherBuilderFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherFactory.CreateMatcher(EndpointDataSource dataSource)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.InitializeCoreAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.<Invoke>g__AwaitMatcher|8_0(EndpointRoutingMiddleware middleware, HttpContext httpContext, Task`1 matcherTask)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+ 2021-12-17 19:58:04.851 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/api/Hotel/api/Hotel/1 - - - 500 - text/plain 13.5943ms
+ 2021-12-17 20:00:14.278 +05:30 [INF] Starting web host
+ 2021-12-17 20:00:16.460 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+ 2021-12-17 20:00:16.470 +05:30 [INF] Hosting environment: Development
+ 2021-12-17 20:00:16.476 +05:30 [INF] Content root path: C:\Users\Administrator\source\repos\HotelListing\HotelListing
+ 2021-12-17 20:00:16.505 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/swagger/index.html - -
+ 2021-12-17 20:00:16.685 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/swagger/index.html - - - 200 - text/html;charset=utf-8 182.4120ms
+ 2021-12-17 20:00:17.858 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/swagger/v1/swagger.json - -
+ 2021-12-17 20:00:17.983 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 124.7235ms
+ 2021-12-17 20:00:23.420 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:44300/api/hotel/1 - -
+ 2021-12-17 20:00:23.572 +05:30 [INF] Executing endpoint 'HotelListing.Controllers.HotelController.Get (HotelListing)'
+ 2021-12-17 20:00:24.461 +05:30 [INF] Route matched with {action = "Get", controller = "Hotel"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Get(Int32) on controller HotelListing.Controllers.HotelController (HotelListing).
+ 2021-12-17 20:00:46.814 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+ 2021-12-17 20:00:48.367 +05:30 [ERR] Something went wrong in the GetAll System.InvalidOperationException: An error was generated for warning 'Microsoft.EntityFrameworkCore.Query.InvalidIncludePathError': Unable to find navigation 'Countries' specified in string based include path 'Countries'. This exception can be suppressed or logged by passing event ID 'CoreEventId.InvalidIncludePathError' to the 'ConfigureWarnings' method in 'DbContext.OnConfiguring' or 'AddDbContext'.
+   at Microsoft.EntityFrameworkCore.Diagnostics.EventDefinition`2.Log[TLoggerCategory](IDiagnosticsLogger`1 logger, TParam1 arg1, TParam2 arg2)
+   at Microsoft.EntityFrameworkCore.Diagnostics.CoreLoggerExtensions.InvalidIncludePathError(IDiagnosticsLogger`1 diagnostics, String navigationChain, String navigationName)
+   at Microsoft.EntityFrameworkCore.Query.Internal.NavigationExpandingExpressionVisitor.ProcessInclude(NavigationExpansionExpression source, Expression expression, Boolean thenInclude)
+   at Microsoft.EntityFrameworkCore.Query.Internal.NavigationExpandingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at System.Linq.Expressions.MethodCallExpression.Accept(ExpressionVisitor visitor)
+   at System.Linq.Expressions.ExpressionVisitor.Visit(Expression node)
+   at Microsoft.EntityFrameworkCore.Query.Internal.NavigationExpandingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at System.Linq.Expressions.MethodCallExpression.Accept(ExpressionVisitor visitor)
+   at System.Linq.Expressions.ExpressionVisitor.Visit(Expression node)
+   at Microsoft.EntityFrameworkCore.Query.Internal.NavigationExpandingExpressionVisitor.Expand(Expression query)
+   at Microsoft.EntityFrameworkCore.Query.QueryTranslationPreprocessor.Process(Expression query)
+   at Microsoft.EntityFrameworkCore.Query.RelationalQueryTranslationPreprocessor.Process(Expression query)
+   at Microsoft.EntityFrameworkCore.Query.QueryCompilationContext.CreateQueryExecutor[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Storage.Database.CompileQuery[TResult](Expression query, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.CompileQueryCore[TResult](IDatabase database, Expression query, IModel model, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass12_0`1.<ExecuteAsync>b__0()
+   at Microsoft.EntityFrameworkCore.Query.Internal.CompiledQueryCache.GetOrAddQuery[TResult](Object cacheKey, Func`1 compiler)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteAsync[TResult](Expression query, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.ExecuteAsync[TResult](Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ExecuteAsync[TSource,TResult](MethodInfo operatorMethodInfo, IQueryable`1 source, Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ExecuteAsync[TSource,TResult](MethodInfo operatorMethodInfo, IQueryable`1 source, LambdaExpression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.FirstOrDefaultAsync[TSource](IQueryable`1 source, Expression`1 predicate, CancellationToken cancellationToken)
+   at HotelListing.Data.GenericRepository.GenericRepository`1.Get(Expression`1 expression, List`1 includes) in C:\Users\Administrator\source\repos\HotelListing\HotelListing\Data\Repositories\GenericRepository.cs:line 45
+   at HotelListing.Controllers.HotelController.Get(Int32 id) in C:\Users\Administrator\source\repos\HotelListing\HotelListing\Controllers\HotelController.cs:line 52
+ 2021-12-17 20:00:48.791 +05:30 [INF] Executing ObjectResult, writing value of type 'System.String'.
+ 2021-12-17 20:00:48.811 +05:30 [INF] Executed action HotelListing.Controllers.HotelController.Get (HotelListing) in 24340.558ms
+ 2021-12-17 20:00:48.813 +05:30 [INF] Executed endpoint 'HotelListing.Controllers.HotelController.Get (HotelListing)'
+ 2021-12-17 20:00:48.821 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:44300/api/hotel/1 - - - 500 - text/plain;+charset=utf-8 25401.8083ms
+ 2021-12-17 20:01:06.132 +05:30 [INF] Starting web host
+ 2021-12-17 20:01:08.201 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+ 2021-12-17 20:01:08.208 +05:30 [INF] Hosting environment: Development
+ 2021-12-17 20:01:08.210 +05:30 [INF] Content root path: C:\Users\Administrator\source\repos\HotelListing\HotelListing
+ 2021-12-17 20:01:08.238 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/swagger/index.html - -
+ 2021-12-17 20:01:08.432 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/swagger/index.html - - - 200 - text/html;charset=utf-8 196.1934ms
+ 2021-12-17 20:01:09.632 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/swagger/v1/swagger.json - -
+ 2021-12-17 20:01:09.767 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 135.4938ms
+ 2021-12-17 20:01:43.958 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:44300/api/hotel/1 - -
+ 2021-12-17 20:01:44.024 +05:30 [INF] Executing endpoint 'HotelListing.Controllers.HotelController.Get (HotelListing)'
+ 2021-12-17 20:01:44.121 +05:30 [INF] Route matched with {action = "Get", controller = "Hotel"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Get(Int32) on controller HotelListing.Controllers.HotelController (HotelListing).
+ 2021-12-17 20:01:45.479 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+ 2021-12-17 20:01:45.896 +05:30 [ERR] Something went wrong in the GetAll System.InvalidOperationException: An error was generated for warning 'Microsoft.EntityFrameworkCore.Query.InvalidIncludePathError': Unable to find navigation 'Countries' specified in string based include path 'Countries'. This exception can be suppressed or logged by passing event ID 'CoreEventId.InvalidIncludePathError' to the 'ConfigureWarnings' method in 'DbContext.OnConfiguring' or 'AddDbContext'.
+   at Microsoft.EntityFrameworkCore.Diagnostics.EventDefinition`2.Log[TLoggerCategory](IDiagnosticsLogger`1 logger, TParam1 arg1, TParam2 arg2)
+   at Microsoft.EntityFrameworkCore.Diagnostics.CoreLoggerExtensions.InvalidIncludePathError(IDiagnosticsLogger`1 diagnostics, String navigationChain, String navigationName)
+   at Microsoft.EntityFrameworkCore.Query.Internal.NavigationExpandingExpressionVisitor.ProcessInclude(NavigationExpansionExpression source, Expression expression, Boolean thenInclude)
+   at Microsoft.EntityFrameworkCore.Query.Internal.NavigationExpandingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at System.Linq.Expressions.MethodCallExpression.Accept(ExpressionVisitor visitor)
+   at System.Linq.Expressions.ExpressionVisitor.Visit(Expression node)
+   at Microsoft.EntityFrameworkCore.Query.Internal.NavigationExpandingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at System.Linq.Expressions.MethodCallExpression.Accept(ExpressionVisitor visitor)
+   at System.Linq.Expressions.ExpressionVisitor.Visit(Expression node)
+   at Microsoft.EntityFrameworkCore.Query.Internal.NavigationExpandingExpressionVisitor.Expand(Expression query)
+   at Microsoft.EntityFrameworkCore.Query.QueryTranslationPreprocessor.Process(Expression query)
+   at Microsoft.EntityFrameworkCore.Query.RelationalQueryTranslationPreprocessor.Process(Expression query)
+   at Microsoft.EntityFrameworkCore.Query.QueryCompilationContext.CreateQueryExecutor[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Storage.Database.CompileQuery[TResult](Expression query, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.CompileQueryCore[TResult](IDatabase database, Expression query, IModel model, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass12_0`1.<ExecuteAsync>b__0()
+   at Microsoft.EntityFrameworkCore.Query.Internal.CompiledQueryCache.GetOrAddQuery[TResult](Object cacheKey, Func`1 compiler)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteAsync[TResult](Expression query, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.ExecuteAsync[TResult](Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ExecuteAsync[TSource,TResult](MethodInfo operatorMethodInfo, IQueryable`1 source, Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ExecuteAsync[TSource,TResult](MethodInfo operatorMethodInfo, IQueryable`1 source, LambdaExpression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.FirstOrDefaultAsync[TSource](IQueryable`1 source, Expression`1 predicate, CancellationToken cancellationToken)
+   at HotelListing.Data.GenericRepository.GenericRepository`1.Get(Expression`1 expression, List`1 includes) in C:\Users\Administrator\source\repos\HotelListing\HotelListing\Data\Repositories\GenericRepository.cs:line 45
+   at HotelListing.Controllers.HotelController.Get(Int32 id) in C:\Users\Administrator\source\repos\HotelListing\HotelListing\Controllers\HotelController.cs:line 52
+ 2021-12-17 20:01:45.907 +05:30 [INF] Executing ObjectResult, writing value of type 'System.String'.
+ 2021-12-17 20:01:45.918 +05:30 [INF] Executed action HotelListing.Controllers.HotelController.Get (HotelListing) in 1787.4593ms
+ 2021-12-17 20:01:45.921 +05:30 [INF] Executed endpoint 'HotelListing.Controllers.HotelController.Get (HotelListing)'
+ 2021-12-17 20:01:45.929 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:44300/api/hotel/1 - - - 500 - text/plain;+charset=utf-8 1971.3271ms
+ 2021-12-17 20:01:56.721 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/api/Country - -
+ 2021-12-17 20:01:56.727 +05:30 [INF] Executing endpoint 'HotelListing.Controllers.CountryController.GetCountries (HotelListing)'
+ 2021-12-17 20:01:56.778 +05:30 [INF] Route matched with {action = "GetCountries", controller = "Country"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCountries() on controller HotelListing.Controllers.CountryController (HotelListing).
+ 2021-12-17 20:01:56.817 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+ 2021-12-17 20:02:00.582 +05:30 [INF] Executed DbCommand (150ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Name], [c].[ShortName]
+FROM [Countries] AS [c]
+ 2021-12-17 20:02:00.654 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[HotelListing.Models.CountryDto, HotelListing, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+ 2021-12-17 20:02:01.043 +05:30 [INF] Executed action HotelListing.Controllers.CountryController.GetCountries (HotelListing) in 4264.8456ms
+ 2021-12-17 20:02:01.046 +05:30 [INF] Executed endpoint 'HotelListing.Controllers.CountryController.GetCountries (HotelListing)'
+ 2021-12-17 20:02:01.050 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/api/Country - - - 200 172 application/json;+charset=utf-8 4328.5418ms
+ 2021-12-17 20:02:11.954 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/api/Country/1 - -
+ 2021-12-17 20:02:11.957 +05:30 [INF] Executing endpoint 'HotelListing.Controllers.CountryController.GetCountry (HotelListing)'
+ 2021-12-17 20:02:11.962 +05:30 [INF] Route matched with {action = "GetCountry", controller = "Country"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCountry(Int32) on controller HotelListing.Controllers.CountryController (HotelListing).
+ 2021-12-17 20:02:11.981 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+ 2021-12-17 20:02:12.370 +05:30 [INF] Executed DbCommand (142ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Name], [t].[ShortName], [h].[Id], [h].[Address], [h].[CountryId], [h].[Name], [h].[Rating]
+FROM (
+    SELECT TOP(1) [c].[Id], [c].[Name], [c].[ShortName]
+    FROM [Countries] AS [c]
+    WHERE [c].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Hotels] AS [h] ON [t].[Id] = [h].[CountryId]
+ORDER BY [t].[Id], [h].[Id]
+ 2021-12-17 20:02:12.400 +05:30 [INF] Executing OkObjectResult, writing value of type 'HotelListing.Models.CountryDto'.
+ 2021-12-17 20:02:12.403 +05:30 [INF] Executed action HotelListing.Controllers.CountryController.GetCountry (HotelListing) in 440.6904ms
+ 2021-12-17 20:02:12.403 +05:30 [INF] Executed endpoint 'HotelListing.Controllers.CountryController.GetCountry (HotelListing)'
+ 2021-12-17 20:02:12.404 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/api/Country/1 - - - 200 109 application/json;+charset=utf-8 449.9283ms
+ 2021-12-17 20:02:20.646 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/api/Hotel - -
+ 2021-12-17 20:02:20.647 +05:30 [INF] Executing endpoint 'HotelListing.Controllers.HotelController.GetAll (HotelListing)'
+ 2021-12-17 20:02:20.652 +05:30 [INF] Route matched with {action = "GetAll", controller = "Hotel"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller HotelListing.Controllers.HotelController (HotelListing).
+ 2021-12-17 20:02:20.655 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+ 2021-12-17 20:02:20.673 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [h].[Id], [h].[Address], [h].[CountryId], [h].[Name], [h].[Rating]
+FROM [Hotels] AS [h]
+ 2021-12-17 20:02:20.684 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[HotelListing.Models.HotelDto, HotelListing, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+ 2021-12-17 20:02:20.684 +05:30 [INF] Executed action HotelListing.Controllers.HotelController.GetAll (HotelListing) in 32.6781ms
+ 2021-12-17 20:02:20.685 +05:30 [INF] Executed endpoint 'HotelListing.Controllers.HotelController.GetAll (HotelListing)'
+ 2021-12-17 20:02:20.685 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/api/Hotel - - - 200 203 application/json;+charset=utf-8 38.7047ms
+ 2021-12-17 20:02:29.474 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/api/Hotel/1 - -
+ 2021-12-17 20:02:29.474 +05:30 [INF] Executing endpoint 'HotelListing.Controllers.HotelController.Get (HotelListing)'
+ 2021-12-17 20:02:29.474 +05:30 [INF] Route matched with {action = "Get", controller = "Hotel"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Get(Int32) on controller HotelListing.Controllers.HotelController (HotelListing).
+ 2021-12-17 20:02:29.475 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+ 2021-12-17 20:02:29.570 +05:30 [ERR] Something went wrong in the GetAll System.InvalidOperationException: An error was generated for warning 'Microsoft.EntityFrameworkCore.Query.InvalidIncludePathError': Unable to find navigation 'Countries' specified in string based include path 'Countries'. This exception can be suppressed or logged by passing event ID 'CoreEventId.InvalidIncludePathError' to the 'ConfigureWarnings' method in 'DbContext.OnConfiguring' or 'AddDbContext'.
+   at Microsoft.EntityFrameworkCore.Diagnostics.EventDefinition`2.Log[TLoggerCategory](IDiagnosticsLogger`1 logger, TParam1 arg1, TParam2 arg2)
+   at Microsoft.EntityFrameworkCore.Diagnostics.CoreLoggerExtensions.InvalidIncludePathError(IDiagnosticsLogger`1 diagnostics, String navigationChain, String navigationName)
+   at Microsoft.EntityFrameworkCore.Query.Internal.NavigationExpandingExpressionVisitor.ProcessInclude(NavigationExpansionExpression source, Expression expression, Boolean thenInclude)
+   at Microsoft.EntityFrameworkCore.Query.Internal.NavigationExpandingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.Internal.NavigationExpandingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.Internal.NavigationExpandingExpressionVisitor.Expand(Expression query)
+   at Microsoft.EntityFrameworkCore.Query.QueryTranslationPreprocessor.Process(Expression query)
+   at Microsoft.EntityFrameworkCore.Query.RelationalQueryTranslationPreprocessor.Process(Expression query)
+   at Microsoft.EntityFrameworkCore.Query.QueryCompilationContext.CreateQueryExecutor[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Storage.Database.CompileQuery[TResult](Expression query, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.CompileQueryCore[TResult](IDatabase database, Expression query, IModel model, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass12_0`1.<ExecuteAsync>b__0()
+   at Microsoft.EntityFrameworkCore.Query.Internal.CompiledQueryCache.GetOrAddQuery[TResult](Object cacheKey, Func`1 compiler)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteAsync[TResult](Expression query, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.ExecuteAsync[TResult](Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ExecuteAsync[TSource,TResult](MethodInfo operatorMethodInfo, IQueryable`1 source, Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ExecuteAsync[TSource,TResult](MethodInfo operatorMethodInfo, IQueryable`1 source, LambdaExpression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.FirstOrDefaultAsync[TSource](IQueryable`1 source, Expression`1 predicate, CancellationToken cancellationToken)
+   at HotelListing.Data.GenericRepository.GenericRepository`1.Get(Expression`1 expression, List`1 includes) in C:\Users\Administrator\source\repos\HotelListing\HotelListing\Data\Repositories\GenericRepository.cs:line 45
+   at HotelListing.Controllers.HotelController.Get(Int32 id) in C:\Users\Administrator\source\repos\HotelListing\HotelListing\Controllers\HotelController.cs:line 52
+ 2021-12-17 20:02:29.570 +05:30 [INF] Executing ObjectResult, writing value of type 'System.String'.
+ 2021-12-17 20:02:29.571 +05:30 [INF] Executed action HotelListing.Controllers.HotelController.Get (HotelListing) in 96.4793ms
+ 2021-12-17 20:02:29.571 +05:30 [INF] Executed endpoint 'HotelListing.Controllers.HotelController.Get (HotelListing)'
+ 2021-12-17 20:02:29.572 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/api/Hotel/1 - - - 500 - text/plain;+charset=utf-8 97.8809ms
+ 2021-12-17 20:02:52.294 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/api/Hotel/1 - -
+ 2021-12-17 20:02:52.295 +05:30 [INF] Executing endpoint 'HotelListing.Controllers.HotelController.Get (HotelListing)'
+ 2021-12-17 20:02:52.295 +05:30 [INF] Route matched with {action = "Get", controller = "Hotel"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Get(Int32) on controller HotelListing.Controllers.HotelController (HotelListing).
+ 2021-12-17 20:03:06.412 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+ 2021-12-17 20:05:01.339 +05:30 [INF] Starting web host
+ 2021-12-17 20:05:04.549 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+ 2021-12-17 20:05:04.552 +05:30 [INF] Hosting environment: Development
+ 2021-12-17 20:05:04.554 +05:30 [INF] Content root path: C:\Users\Administrator\source\repos\HotelListing\HotelListing
+ 2021-12-17 20:05:04.583 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/swagger/index.html - -
+ 2021-12-17 20:05:04.909 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/swagger/index.html - - - 200 - text/html;charset=utf-8 329.5460ms
+ 2021-12-17 20:05:06.458 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/swagger/v1/swagger.json - -
+ 2021-12-17 20:05:06.612 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 154.4118ms
+ 2021-12-17 20:05:16.060 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/api/Hotel/2 - -
+ 2021-12-17 20:05:16.125 +05:30 [INF] Executing endpoint 'HotelListing.Controllers.HotelController.Get (HotelListing)'
+ 2021-12-17 20:05:16.200 +05:30 [INF] Route matched with {action = "Get", controller = "Hotel"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Get(Int32) on controller HotelListing.Controllers.HotelController (HotelListing).
+ 2021-12-17 20:05:20.062 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+ 2021-12-17 20:05:21.666 +05:30 [INF] Executed DbCommand (277ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [h].[Id], [h].[Address], [h].[CountryId], [h].[Name], [h].[Rating], [c].[Id], [c].[Name], [c].[ShortName]
+FROM [Hotels] AS [h]
+INNER JOIN [Countries] AS [c] ON [h].[CountryId] = [c].[Id]
+WHERE [h].[Id] = @__id_0
+ 2021-12-17 20:05:29.396 +05:30 [INF] Executing OkObjectResult, writing value of type 'HotelListing.Models.HotelDto'.
+ 2021-12-17 20:05:34.010 +05:30 [INF] Executed action HotelListing.Controllers.HotelController.Get (HotelListing) in 17801.6612ms
+ 2021-12-17 20:05:34.011 +05:30 [INF] Executed endpoint 'HotelListing.Controllers.HotelController.Get (HotelListing)'
+ 2021-12-17 20:05:34.043 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44300/api/Hotel/2 - -
+ 2021-12-17 20:05:34.131 +05:30 [INF] Executing endpoint 'HotelListing.Controllers.HotelController.Get (HotelListing)'
+ 2021-12-17 20:05:34.132 +05:30 [INF] Route matched with {action = "Get", controller = "Hotel"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Get(Int32) on controller HotelListing.Controllers.HotelController (HotelListing).
+ 2021-12-17 20:05:34.209 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/api/Hotel/2 - - - 200 120 application/json;+charset=utf-8 18149.5594ms
+ 2021-12-17 20:05:34.252 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+ 2021-12-17 20:05:34.276 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [h].[Id], [h].[Address], [h].[CountryId], [h].[Name], [h].[Rating], [c].[Id], [c].[Name], [c].[ShortName]
+FROM [Hotels] AS [h]
+INNER JOIN [Countries] AS [c] ON [h].[CountryId] = [c].[Id]
+WHERE [h].[Id] = @__id_0
+ 2021-12-17 20:05:34.321 +05:30 [INF] Executing OkObjectResult, writing value of type 'HotelListing.Models.HotelDto'.
+ 2021-12-17 20:05:34.321 +05:30 [INF] Executed action HotelListing.Controllers.HotelController.Get (HotelListing) in 189.256ms
+ 2021-12-17 20:05:34.322 +05:30 [INF] Executed endpoint 'HotelListing.Controllers.HotelController.Get (HotelListing)'
+ 2021-12-17 20:05:34.322 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44300/api/Hotel/2 - - - 200 120 application/json;+charset=utf-8 279.2963ms
